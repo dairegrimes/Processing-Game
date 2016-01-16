@@ -1,41 +1,14 @@
 void setup()
 {
-  size(500,500);
-  y = height / 3;
-  flip = true;
+  size(600,600);
+  square = new Square();
+
 }
-float x;
-float y;
-boolean flip;
+Square square;
+
 void draw()
 {
   background(177);
-  fill(0);
-  
-  if (flip)
-  {
-    rect(x,y,20,20);
-    x+=6;
-    
-    if(x >= width)
-    {
-      y = height / 3;
-      flip =! flip;
-    }
-  }
-  
-  else
-  {
-    rect(x,y,20,20);
-    x-=6;
-    
-    if(x <= 0)
-    {
-      y = height / 1;
-      flip =! flip;
-    }
-  }
-  
-  
+  square.go();
 
 }
