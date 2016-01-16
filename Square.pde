@@ -13,7 +13,10 @@ class Square
   
   void go()
   {
-       if (flip)
+    line(0,height / 3 + 20,width,height / 3 + 20);
+    line(0,((height / 3) * 2) + 20,width,((height / 3) * 2) + 20);
+    
+      if (flip)
     {
       rect(x,y,20,20);
       fill(0);
@@ -23,6 +26,7 @@ class Square
       {
         y += y;
         flip =! flip;
+        line(0,(y*2) + 20,width,(y*2) + 20);
       }
     }
   
@@ -30,12 +34,13 @@ class Square
     {
       rect(x,y,20,20);
       x-=3;
-    
+  
       if(x <= 0)
       {
        y = height / 3;
         flip =! flip;
       }
+   
     }
   } // end go()
   
