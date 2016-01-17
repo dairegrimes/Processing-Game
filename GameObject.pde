@@ -1,7 +1,9 @@
 class GameObject
 {
    PVector pos;
-   boolean flip;
+   PVector forward;
+   boolean flip = true;;
+   float speed = 10.0f;
    
    
    GameObject()
@@ -12,8 +14,7 @@ class GameObject
   GameObject(float x, float y)
   {
     pos = new PVector(x, y);
-    pos.y = height / 3;
-    
-    flip = true;
+    forward = new PVector(0, 0);
+   
   }
 }

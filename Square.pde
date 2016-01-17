@@ -3,13 +3,17 @@ class Square extends GameObject
 
   Square()
   {
-    super(width * 0.5f, height  * 0.5f); 
+    super(0, height / 3); 
   }
   
   void go()
   {
     line(0,height / 3 + 20,width,height / 3 + 20);
     line(0,((height / 3) * 2) + 20,width,((height / 3) * 2) + 20);
+    
+    forward.mult(speed);
+    pos.add(forward);
+    
     
       if (flip)
     {
