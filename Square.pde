@@ -45,4 +45,11 @@ class Square
   } // end go()
   
   
+  
+  void jump()
+  {
+    
+  } // end jump
+  
+  
 }
