@@ -1,14 +1,16 @@
 class Square extends GameObject
 {
+  boolean flip = true;
 
   Square()
   {
-    super(0, height / 3); 
+    super(0, height / 3);
+    
   }
   
   void go()
   {
-    boolean flip = true;
+    
     
     line(0,height / 3 + 20,width,height / 3 + 20);
     line(0,((height / 3) * 2) + 20,width,((height / 3) * 2) + 20);
@@ -19,14 +21,13 @@ class Square extends GameObject
     {
       rect(pos.x,pos.y,20,20);
       fill(0);
-      pos.x+=speed;
+      pos.x += speed;
     
       if(pos.x >= width)
       {
-        pos.y += height / 3;
+        pos.y = 400;
         flip =! flip;
-        
-      }
+       }
     }
   
     else
@@ -36,7 +37,7 @@ class Square extends GameObject
   
       if(pos.x <= 0)
       {
-       pos.y = height / 3;
+       pos.y = 200;
        flip =! flip;
       }
    
@@ -51,7 +52,12 @@ class Square extends GameObject
     {
       if(key == ' ')
       {
-        pos.y -= 20;
+        pos.y -= 10;
+        
+        if(pos.x == 20)
+        {
+          pos.y += 20;
+        }
       }
     }
   } // end jump
