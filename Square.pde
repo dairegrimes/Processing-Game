@@ -8,18 +8,18 @@ class Square extends GameObject
   
   void go()
   {
+    boolean flip = true;
+    
     line(0,height / 3 + 20,width,height / 3 + 20);
     line(0,((height / 3) * 2) + 20,width,((height / 3) * 2) + 20);
-    
-    forward.mult(speed);
-    pos.add(forward);
+
     
     
       if (flip)
     {
       rect(pos.x,pos.y,20,20);
       fill(0);
-      pos.x+=3;
+      pos.x+=speed;
     
       if(pos.x >= width)
       {
@@ -32,7 +32,7 @@ class Square extends GameObject
     else
     {
       rect(pos.x,pos.y,20,20);
-      pos.x-=3;
+      pos.x -= speed;
   
       if(pos.x <= 0)
       {
