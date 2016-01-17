@@ -37,7 +37,7 @@ class Square extends GameObject
       if(pos.x <= 0)
       {
        pos.y = height / 3;
-        flip =! flip;
+       flip =! flip;
       }
    
     }
@@ -47,7 +47,13 @@ class Square extends GameObject
   
   void jump()
   {
-    
+    if (keyPressed)
+    {
+      if(key == ' ')
+      {
+        pos.y -= 20;
+      }
+    }
   } // end jump
   
   

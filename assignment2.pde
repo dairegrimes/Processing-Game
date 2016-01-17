@@ -10,5 +10,6 @@ void draw()
 {
   background(177);
   square.go();
+  square.jump();
 
 }
