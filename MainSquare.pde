@@ -1,9 +1,9 @@
-class Square extends GameObject
+class MainSquare extends GameObject
 {
-  boolean flip = true;
+  
   boolean jumping = true;
 
-  Square()
+  MainSquare()
   {
     super(0, height / 3);
     
@@ -11,52 +11,54 @@ class Square extends GameObject
   
   void go()
   {
-    line(0,height / 3 + 20,width,height / 3 + 20);
-    line(0,((height / 3) * 2) + 20,width,((height / 3) * 2) + 20);
+    line(0,floor1 + squareSize,width,floor1 + squareSize);
+    line(0,floor2 + squareSize,width,floor2 + squareSize);
 
       // FIRST LEVEL
-      if (flip)
+      if (firstFloor)
     {
-      rect(pos.x,pos.y,18,18);
+      rect(pos.x,pos.y,squareSize,squareSize);
       fill(0);
       pos.x += speed;
     
       if(pos.x >= width)
       {
-        pos.y = 400;
-        flip =! flip;
+        pos.y = floor2;
+        firstFloor =! firstFloor;
       }
     }
   
     // SECOND LEVEL
     else
     {
-      rect(pos.x,pos.y,20,20);
+      rect(pos.x,pos.y,squareSize,squareSize);
       pos.x -= speed;
   
       if(pos.x <= 0)
       {
-       pos.y = 200;
-       flip =! flip;
+       pos.y = floor1;
+       firstFloor =! firstFloor;
       }
     }
+    println(pos.y);
   } // end go()
   
   
   
   void jump()
   {
+    
       // FIRST LEVEL
-    if(flip)
+    if(firstFloor)
     {
         if(jumping)
       {
-         if(pos.y <= 200)
+         if(pos.y != floor1)
          {
             pos.y += 2;
          }
       
-        if (pos.y >= 200)
+        if (pos.y >= floor1)
         {
             if(keyPressed)
           {
@@ -88,12 +90,12 @@ class Square extends GameObject
     {
         if(jumping)
       {
-         if(pos.y <= 400)
+         if(pos.y != floor2)
          {
-            pos.y += 3;
+            pos.y += 2;
          }
       
-        if (pos.y >= 400)
+        if (pos.y >= floor2)
         {
             if(keyPressed)
           {

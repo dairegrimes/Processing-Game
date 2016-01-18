@@ -1,9 +1,12 @@
 class GameObject
 {
+   boolean firstFloor = true;
+   int speed = 3;
+   int squareSize = 20;
+   float floor1 = width / 3;
+   float floor2 = (width / 3) * 2;
    PVector pos;
    PVector forward;
-   float speed = 3.0f;
-   
    
    
    GameObject()

@@ -1,10 +1,10 @@
 void setup()
 {
   size(600,600);
-  square = new Square();
+  square = new MainSquare();
 
 }
-Square square;
+MainSquare square;
 
 void draw()
 {
