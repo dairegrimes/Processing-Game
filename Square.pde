@@ -1,7 +1,7 @@
 class Square extends GameObject
 {
   boolean flip = true;
-  boolean flip2 = true;
+  boolean jumping = true;
 
   Square()
   {
@@ -16,7 +16,7 @@ class Square extends GameObject
     line(0,height / 3 + 20,width,height / 3 + 20);
     line(0,((height / 3) * 2) + 20,width,((height / 3) * 2) + 20);
 
-
+      // FIRST LEVEL
       if (flip)
     {
       rect(pos.x,pos.y,20,20);
@@ -30,6 +30,7 @@ class Square extends GameObject
        }
     }
   
+    // SECOND LEVEL
     else
     {
       rect(pos.x,pos.y,20,20);
@@ -50,10 +51,10 @@ class Square extends GameObject
   
   void jump()
   {
-      
+      // FIRST LEVEL
     if(flip)
     {
-        if(flip2)
+        if(jumping)
       {
          if(pos.y <= 200)
          {
@@ -67,7 +68,7 @@ class Square extends GameObject
  
             if(key == ' ')
             {
-              flip2 =! flip2;
+              jumping =! jumping;
             } 
           }
         }
@@ -81,18 +82,16 @@ class Square extends GameObject
         if(pos.y <= 150)
         {
           pos.y = 150;
-          flip2 =! flip2;
+          jumping =! jumping;
         }
-
-
+       }
       }
-   
-     }
      
      
+     // SECOND LEVEL
       else
     {
-        if(flip2)
+        if(jumping)
       {
          if(pos.y <= 400)
          {
@@ -106,7 +105,7 @@ class Square extends GameObject
  
             if(key == ' ')
             {
-              flip2 =! flip2;
+              jumping =! jumping;
             } 
           }
         }
@@ -116,21 +115,13 @@ class Square extends GameObject
       {
         pos.y -= 3;
    
-    
-        if(pos.y <= 350)
+          if(pos.y <= 350)
         {
           pos.y = 350;
-          flip2 =! flip2;
+          jumping =! jumping;
         }
-
-
+       }
       }
-   
-     }
-      
-      
      
-
-  
   }// end jump
 }

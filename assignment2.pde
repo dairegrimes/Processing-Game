@@ -9,7 +9,7 @@ Square square;
 void draw()
 {
   background(177);
-  line(0,200,width,200);
+
   square.go();
   square.jump();
 }
