@@ -2,7 +2,7 @@ class GameObject
 {
    PVector pos;
    PVector forward;
-   float speed = 5.0f;
+   float speed = 3.0f;
    
    
    
@@ -14,6 +14,5 @@ class GameObject
   GameObject(float x, float y)
   {
     pos = new PVector(x, y);
-    
   }
 }

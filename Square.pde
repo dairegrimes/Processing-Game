@@ -42,46 +42,89 @@ class Square extends GameObject
       }
    
     }
+    
+
   } // end go()
   
   
   
   void jump()
   {
-        if(flip)
-    {
-       if(pos.y != 450)
-       {
-          pos.y += 3;
-       
-       }
       
-      if(keyPressed)
-      {
- 
-        if(key == ' ')
-        {
-        
-          flip =! flip;
-        } 
-      }
-    }
-  
-    else
+    if(flip)
     {
-      pos.y -= 3;
+        if(flip2)
+      {
+         if(pos.y <= 200)
+         {
+            pos.y += 3;
+         }
+      
+        if(keyPressed)
+        {
+ 
+          if(key == ' ')
+          {
+            flip2 =! flip2;
+          } 
+        }
+      }
+  
+      else
+      {
+        pos.y -= 3;
    
     
-      if(pos.y <= 300)
-      {
-        pos.y = 300;
-      
-        flip =! flip;
+        if(pos.y <= 150)
+        {
+          pos.y = 150;
+          flip2 =! flip2;
+        }
+
 
       }
+   
+     }
+     
+     
+      else
+    {
+        if(flip2)
+      {
+         if(pos.y <= 400)
+         {
+            pos.y += 3;
+         }
+      
+        if(keyPressed)
+        {
+ 
+          if(key == ' ')
+          {
+            flip2 =! flip2;
+          } 
+        }
+      }
+  
+      else
+      {
+        pos.y -= 3;
+   
+    
+        if(pos.y <= 350)
+        {
+          pos.y = 350;
+          flip2 =! flip2;
+        }
 
-    }
+
+      }
+   
+     }
+      
+      
+     
 
   
-    }// end jump
+  }// end jump
 }
