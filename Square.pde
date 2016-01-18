@@ -1,6 +1,7 @@
 class Square extends GameObject
 {
   boolean flip = true;
+  boolean flip2 = true;
 
   Square()
   {
@@ -15,8 +16,7 @@ class Square extends GameObject
     line(0,height / 3 + 20,width,height / 3 + 20);
     line(0,((height / 3) * 2) + 20,width,((height / 3) * 2) + 20);
 
-    
-    
+
       if (flip)
     {
       rect(pos.x,pos.y,20,20);
@@ -48,19 +48,40 @@ class Square extends GameObject
   
   void jump()
   {
-    if (keyPressed)
+        if(flip)
     {
-      if(key == ' ')
+       if(pos.y != 450)
+       {
+          pos.y += 3;
+       
+       }
+      
+      if(keyPressed)
       {
-        pos.y -= 10;
-        
-        if(pos.x == 20)
+ 
+        if(key == ' ')
         {
-          pos.y += 20;
-        }
+        
+          flip =! flip;
+        } 
       }
     }
-  } // end jump
   
+    else
+    {
+      pos.y -= 3;
+   
+    
+      if(pos.y <= 300)
+      {
+        pos.y = 300;
+      
+        flip =! flip;
+
+      }
+
+    }
+
   
+    }// end jump
 }
