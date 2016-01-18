@@ -40,7 +40,7 @@ class MainSquare extends GameObject
        firstFloor =! firstFloor;
       }
     }
-    println(pos.y);
+
   } // end go()
   
   
@@ -55,7 +55,7 @@ class MainSquare extends GameObject
       {
          if(pos.y != floor1)
          {
-            pos.y += 2;
+            pos.y += jumpSpeed;
          }
       
         if (pos.y >= floor1)
@@ -73,7 +73,7 @@ class MainSquare extends GameObject
   
       else
       {
-        pos.y -= 2;
+        pos.y -= jumpSpeed;
    
     
         if(pos.y <= 150)
@@ -92,7 +92,7 @@ class MainSquare extends GameObject
       {
          if(pos.y != floor2)
          {
-            pos.y += 2;
+            pos.y += jumpSpeed;
          }
       
         if (pos.y >= floor2)
@@ -110,7 +110,7 @@ class MainSquare extends GameObject
   
       else
       {
-        pos.y -= 3;
+        pos.y -= jumpSpeed;
    
           if(pos.y <= 350)
         {
