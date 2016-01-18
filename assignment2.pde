@@ -12,7 +12,4 @@ void draw()
   line(0,200,width,200);
   square.go();
   square.jump();
-  println(mouseX);
-  println(mouseY);
-
 }

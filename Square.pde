@@ -60,13 +60,16 @@ class Square extends GameObject
             pos.y += 3;
          }
       
-        if(keyPressed)
+        if (pos.y >= 200)
         {
- 
-          if(key == ' ')
+            if(keyPressed)
           {
-            flip2 =! flip2;
-          } 
+ 
+            if(key == ' ')
+            {
+              flip2 =! flip2;
+            } 
+          }
         }
       }
   
@@ -96,13 +99,16 @@ class Square extends GameObject
             pos.y += 3;
          }
       
-        if(keyPressed)
+        if (pos.y >= 400)
         {
- 
-          if(key == ' ')
+            if(keyPressed)
           {
-            flip2 =! flip2;
-          } 
+ 
+            if(key == ' ')
+            {
+              flip2 =! flip2;
+            } 
+          }
         }
       }
   
