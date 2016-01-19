@@ -4,16 +4,18 @@ void setup()
   square = new MainSquare();
   obstacle = new Obstacle();
 
+
 }
 MainSquare square;
 Obstacle obstacle;
+
 
 void draw()
 {
   background(177);
 
+  square.collide();
   square.go();
   square.jump();
-  square.collide();
   obstacle.stand();
 }

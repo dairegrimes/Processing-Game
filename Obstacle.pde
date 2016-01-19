@@ -1,16 +1,23 @@
 class Obstacle extends GameObject
 {
-  float x;
-  float y;
+
+  
+  
   Obstacle()
   {
-    x = 300;
-    y = 0;
+     super(0, height / 3);
   }
   
   void stand()
   {
-    rect(v2.x,v2.y,squareSize,squareSize);
+    
+    
+    rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
+     
   }
+  
+  
+  
+
   
 }

@@ -7,18 +7,36 @@ class GameObject
    float floor1 = width / 3;
    float floor2 = (width / 3) * 2;
    PVector pos;
-   PVector v2;
-   float distance;
    PVector[] obstacles = new PVector[2];
+   float distance;
+   int[] randnum = { 200, 300, 400};
+   
+     
+   
+   
+   
    
    GameObject()
   {
     this(0, height / 3);
   }
   
+  
   GameObject(float x, float y)
   {
     pos = new PVector(x, y);
-    v2 = new PVector(300, 200);
+    
+     for (int i = 0; i < obstacles.length; i++) 
+    {
+      obstacles[i] = new PVector();
+    }
+    
+    obstacles[0].x = 200;
+    obstacles[0].y = 200;
   }
+ 
+
+  
+  
+  
 }
