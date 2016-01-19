@@ -121,4 +121,22 @@ class MainSquare extends GameObject
       }
      
   }// end jump
+  
+  
+  void collide()
+  {
+     if(firstFloor)
+     {
+       if(pos.y >= 200)
+       {
+         if (pos.x > 280 && pos.x < 320)
+          {
+            pos.x = 0;
+          }
+       }
+     }
+    
+  } // end collide
+  
+  
 }

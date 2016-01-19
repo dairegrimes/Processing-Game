@@ -7,7 +7,7 @@ class Obstacle extends GameObject
   
   void stand()
   {
-    
+    rect(pos.x + 300,pos.y,squareSize,squareSize);
   }
   
 }
