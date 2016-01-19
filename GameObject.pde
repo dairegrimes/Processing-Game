@@ -7,7 +7,8 @@ class GameObject
    float floor1 = width / 3;
    float floor2 = (width / 3) * 2;
    PVector pos;
-   PVector forward;
+   PVector v2;
+   float distance;
    
    
    GameObject()
@@ -18,5 +19,7 @@ class GameObject
   GameObject(float x, float y)
   {
     pos = new PVector(x, y);
+    v2 = new PVector(x, y);
+    distance = PVector.dist(pos, v2);
   }
 }

@@ -13,33 +13,26 @@ class MainSquare extends GameObject
   {
     line(0,floor1 + squareSize,width,floor1 + squareSize);
     line(0,floor2 + squareSize,width,floor2 + squareSize);
-
-      // FIRST LEVEL
-      if (firstFloor)
-    {
-      rect(pos.x,pos.y,squareSize,squareSize);
-      fill(0);
-      pos.x += speed;
     
+     rect(pos.x,pos.y,squareSize,squareSize);
+     fill(0);
+     pos.x += speed;
+    
+      // FIRST FLOOR
       if(pos.x >= width)
       {
         pos.y = floor2;
+        speed *= (-1);
         firstFloor =! firstFloor;
       }
-    }
-  
-    // SECOND LEVEL
-    else
-    {
-      rect(pos.x,pos.y,squareSize,squareSize);
-      pos.x -= speed;
-  
+      
+      // SECOND FLOOR
       if(pos.x <= 0)
       {
-       pos.y = floor1;
-       firstFloor =! firstFloor;
+        pos.y = floor1;
+        speed *= (-1);
+        firstFloor =! firstFloor;
       }
-    }
 
   } // end go()
   
@@ -135,7 +128,7 @@ class MainSquare extends GameObject
           }
        }
      }
-    
+    println(distance);
   } // end collide
   
   
