@@ -33,7 +33,10 @@ class MainSquare extends GameObject
         speed *= (-1);
         firstFloor =! firstFloor;
       }
-
+      
+      distance = PVector.dist(pos, v2);
+      println(distance);
+      
   } // end go()
   
   
@@ -120,15 +123,12 @@ class MainSquare extends GameObject
   {
      if(firstFloor)
      {
-       if(pos.y >= 200)
+       if(distance <= squareSize)
        {
-         if (pos.x > 280 && pos.x < 320)
-          {
-            pos.x = 0;
-          }
+        pos.x = 0;
        }
      }
-    println(distance);
+    
   } // end collide
   
   

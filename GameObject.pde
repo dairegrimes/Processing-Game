@@ -9,7 +9,7 @@ class GameObject
    PVector pos;
    PVector v2;
    float distance;
-   
+   PVector[] obstacles = new PVector[2];
    
    GameObject()
   {
@@ -19,7 +19,6 @@ class GameObject
   GameObject(float x, float y)
   {
     pos = new PVector(x, y);
-    v2 = new PVector(x, y);
-    distance = PVector.dist(pos, v2);
+    v2 = new PVector(300, 200);
   }
 }
