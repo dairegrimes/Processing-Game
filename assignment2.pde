@@ -5,6 +5,7 @@ void setup()
   obstacle = new Obstacle();
 
 
+
 }
 MainSquare square;
 Obstacle obstacle;
@@ -14,8 +15,10 @@ void draw()
 {
   background(177);
 
-  square.collide();
+  
   square.go();
   square.jump();
-  obstacle.stand();
+  obstacle.render();
+  square.collide();
+  
 }

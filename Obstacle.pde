@@ -8,16 +8,14 @@ class Obstacle extends GameObject
      super(0, height / 3);
   }
   
-  void stand()
+  void render()
   {
     
+    for(index = 0; index < obstacles.length; index ++)
+    {
+      rect(obstacles[index].x,obstacles[index].y,squareSize,squareSize);
+    }
     
-    rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
-     
-  }
-  
-  
-  
-
+  } // end render()
   
 }

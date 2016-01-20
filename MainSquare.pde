@@ -121,21 +121,19 @@ class MainSquare extends GameObject
   {
     
 
-      
-     //println(distance);
-     
-     if(firstFloor)
-     {
-       
-       distance = PVector.dist(pos, obstacles[0]);
-       println(distance);
-       println(obstacles[0]);
-       
-       if(distance <= squareSize)
+       for(index = 0; index < obstacles.length; index ++)
        {
-          pos.x = 0;
+         distance = PVector.dist(pos, obstacles[index]);
+         
+           if(distance <= squareSize)
+         {
+            pos.x = 0;
+         }
        }
-     }
+       
+       
+       
+     
     
   } // end collide
   

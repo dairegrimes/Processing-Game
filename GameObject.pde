@@ -9,8 +9,8 @@ class GameObject
    PVector pos;
    PVector[] obstacles = new PVector[2];
    float distance;
-   int[] randnum = { 200, 300, 400};
-   
+   int[] position = { 200, 400 };
+   int index;
      
    
    
@@ -31,8 +31,11 @@ class GameObject
       obstacles[i] = new PVector();
     }
     
-    obstacles[0].x = 200;
-    obstacles[0].y = 200;
+    for(index = 0; index < obstacles.length; index ++ )
+    {
+      obstacles[index].x = position[index];
+      obstacles[index].y = 200;
+    }
   }
  
 
