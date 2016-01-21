@@ -125,10 +125,22 @@ class MainSquare extends GameObject
        {
          distance = PVector.dist(pos, obstacles[index]);
          
-           if(distance <= squareSize)
-         {
-            pos.x = 0;
-         }
+            if(distance <= squareSize)
+             {
+              if(firstFloor)
+              {
+                pos.x = 0;
+              }
+              
+              else
+              {
+                pos.x = width;
+              }
+             }
+           
+          
+             
+
        }
        
        
