@@ -2,13 +2,10 @@ void setup()
 {
   size(600,600);
   square = new MainSquare();
-  obstacle = new Obstacle();
-
-
 
 }
 MainSquare square;
-Obstacle obstacle;
+
 
 
 void draw()
@@ -17,7 +14,7 @@ void draw()
 
   square.go();
   square.jump();
-  obstacle.render();
+  square.obstacles();
   square.collide();
   square.lives();
 

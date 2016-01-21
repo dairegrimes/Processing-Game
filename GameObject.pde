@@ -9,38 +9,35 @@ class GameObject
    PVector pos;
    PVector[] obstacles = new PVector[4];
    float distance;
-   int[] position = { 200, 400 , 300 , 500};
+   int[] levels1 = { 200, 400 , 300 };
+   int[] levels2 = { 300 };
+   int[] levels3 = { 200, 400 , 300 , 500};
+   int[] levels4 = { 200, 400 , 300 , 500};
+   int[] levels5 = { 200, 400 , 300 , 500};
+   int[] levels6 = { 200, 400 , 300 , 500};
+   int[] levels7 = { 200, 400 , 300 , 500};
+   int[] levels8 = { 200, 400 , 300 , 500};
+   int[] levels9 = { 200, 400 , 300 , 500};
+   int[] levels10 = { 200, 400 , 300 , 500};
    int index;
-     
-   
-   
    
    
    GameObject()
-  {
-    this(0, height / 3);
-  }
+   {
+     this (0, width / 3);
+   }
+   
+
   
   
   GameObject(float x, float y)
   {
+    
     pos = new PVector(x, y);
-    
-     for (int i = 0; i < obstacles.length; i++) 
-    {
-      obstacles[i] = new PVector();
-    }
-    
-    for(index = 0; index < obstacles.length; index ++ )
-    {
-      obstacles[index].x = position[index];
-      obstacles[0].y = 200;
-      obstacles[1].y = 200;
-      obstacles[2].y = 400;
-      obstacles[3].y = 400;
-    }
+   
     
     
+ 
   }
  
 

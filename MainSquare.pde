@@ -1,14 +1,18 @@
+
 class MainSquare extends GameObject
 {
   
   boolean jumping = true;
   int lives = 0;
+  int level = 1;
 
   MainSquare()
   {
     super(0, height / 3);
-    
   }
+  
+  
+
   
   void go()
   {
@@ -30,6 +34,7 @@ class MainSquare extends GameObject
       // SECOND FLOOR
       if(pos.x <= 0)
       {
+        level ++;
         pos.y = floor1;
         speed *= (-1);
         firstFloor =! firstFloor;
@@ -120,9 +125,7 @@ class MainSquare extends GameObject
   
     void collide()
   {
-    
-
-       for(index = 0; index < obstacles.length; index ++)
+    for(index = 0; index < obstacles.length; index ++)
        {
          distance = PVector.dist(pos, obstacles[index]);
          
@@ -147,6 +150,49 @@ class MainSquare extends GameObject
   void lives()
   {
     text(lives,30,30);
-    
   } // lives()
+  
+  
+  void obstacles()
+  {
+    for (int i = 0; i < obstacles.length; i++) 
+    {
+      obstacles[i] = new PVector();
+    }
+    
+    
+    println(level);
+    switch(level)
+    {
+      case 1:
+      
+        for(int i = 0; i < levels1.length; i ++)
+        {
+          obstacles[i].x = levels1[i];
+          obstacles[i].y = floor1;
+          rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
+        }
+        
+      
+      break;
+      
+      
+      case 2:
+      
+        for(int i = 0; i < levels2.length; i ++)
+        {
+          obstacles[i].x = levels2[i];
+          obstacles[i].y = floor1;
+          rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
+        }
+       
+      
+       break;
+      
+    } //  end obstacles
+    
+  }
+  
+  
+  
 }
