@@ -15,10 +15,10 @@ void draw()
 {
   background(177);
 
-  
   square.go();
   square.jump();
   obstacle.render();
   square.collide();
-  
+  square.lives();
+
 }

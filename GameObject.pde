@@ -7,9 +7,9 @@ class GameObject
    float floor1 = width / 3;
    float floor2 = (width / 3) * 2;
    PVector pos;
-   PVector[] obstacles = new PVector[2];
+   PVector[] obstacles = new PVector[4];
    float distance;
-   int[] position = { 200, 400 };
+   int[] position = { 200, 400 , 300 , 500};
    int index;
      
    
@@ -34,8 +34,13 @@ class GameObject
     for(index = 0; index < obstacles.length; index ++ )
     {
       obstacles[index].x = position[index];
-      obstacles[index].y = 200;
+      obstacles[0].y = 200;
+      obstacles[1].y = 200;
+      obstacles[2].y = 400;
+      obstacles[3].y = 400;
     }
+    
+    
   }
  
 

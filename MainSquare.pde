@@ -2,6 +2,7 @@ class MainSquare extends GameObject
 {
   
   boolean jumping = true;
+  int lives = 0;
 
   MainSquare()
   {
@@ -130,24 +131,22 @@ class MainSquare extends GameObject
               if(firstFloor)
               {
                 pos.x = 0;
+                lives ++;
               }
               
               else
               {
                 pos.x = width;
+                lives ++;
               }
              }
-           
-          
-             
-
-       }
-       
-       
-       
-     
+        }
+} // end collide
+  
+  
+  void lives()
+  {
+    text(lives,30,30);
     
-  } // end collide
-  
-  
+  } // lives()
 }
