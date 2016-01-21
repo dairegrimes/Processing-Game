@@ -7,9 +7,9 @@ class GameObject
    float floor1 = width / 3;
    float floor2 = (width / 3) * 2;
    PVector pos;
-   PVector[] obstacles = new PVector[4];
+   PVector[] obstacles = new PVector[5];
    float distance;
-   int[] levels1 = { 200 , 300 , 200, 300};
+   int[] levels1 = { 200 , 300 , 200, 300, 400};
    int[] levels2 = { 300 };
    int[] levels3 = { 200, 400 , 300 };
    int[] levels4 = { 200, 400 , 300 };

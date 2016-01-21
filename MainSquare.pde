@@ -181,11 +181,8 @@ class MainSquare extends GameObject
                obstacles[i].y = floor2;
              }
              
-             
-             
              rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
-             
-             
+         
           }
           
           
