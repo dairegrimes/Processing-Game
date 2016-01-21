@@ -10,7 +10,7 @@ class GameObject
    PVector[] obstacles = new PVector[5];
    float distance;
    int[] levels1 = { 200 , 300 , 200, 300, 400};
-   int[] levels2 = { 300 };
+   int[] levels2 = { 200, 400, 200, 400 };
    int[] levels3 = { 200, 400 , 300 };
    int[] levels4 = { 200, 400 , 300 };
    int[] levels5 = { 200, 400 , 300 };

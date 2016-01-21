@@ -4,7 +4,7 @@ class MainSquare extends GameObject
   
   boolean jumping = true;
   int lives = 0;
-  int level = 1;
+  int level = 3;
 
   MainSquare()
   {
@@ -158,8 +158,6 @@ class MainSquare extends GameObject
   void obstacles()
   {
     
-
-    
       for (int i = 0; i < obstacles.length; i++) 
     {
       obstacles[i] = new PVector();
@@ -192,12 +190,14 @@ class MainSquare extends GameObject
       case 2:
       
         {
-          for(int i = 0; i < levels2.length; i ++)
-          {
-           obstacles[i].x = levels2[i];
-           obstacles[i].y = floor1;
-           rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
-          }
+
+           obstacles[0].x = levels2[0];
+           obstacles[0].y = floor1;
+           
+           rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
+           
+          
+          
         }
 
        break;
@@ -205,17 +205,26 @@ class MainSquare extends GameObject
        case 3:
       
         {
-          for(int i = 0; i < levels3.length; i ++)
-          {
-           obstacles[i].x = levels3[i];
-           obstacles[i].y = floor1;
-           rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
-          }
+          
+             obstacles[0].x = 300;
+             obstacles[0].y = floor1;
+             
+             obstacles[1].x = 300;
+             obstacles[1].y = floor1 - 70;
+             
+             rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
+             rect(obstacles[1].x,obstacles[1].y,squareSize,squareSize);
+             
+             for(int i = 0; i < levels3.length; i ++ )
+             {
+               rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
+             }
+          
         }
 
        break;
       
-    } //  end obstacles
+    } //  end obstacles()
     
   }
   
