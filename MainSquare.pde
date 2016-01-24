@@ -205,7 +205,7 @@ class MainSquare extends GameObject
             for(int i = 2; i < levels2.length; i ++ )
              {
                
-               obstacles[i].x = levels3[i];
+               obstacles[i].x = levels2[i];
                obstacles[i].y = floor2;
                rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
              }
@@ -219,12 +219,36 @@ class MainSquare extends GameObject
        case 3:
       
         {
+             obstacles[5].x = 300;
+             obstacles[5].y = floor2;
              
+             obstacles[6].x = 400;
+             obstacles[6].y = floor2 - 25;
              
-             for(int i = 0; i  < levels3.length; i ++)
+             obstacles[7].x = 420;
+             obstacles[7].y = floor2 - 25;
+             
+             obstacles[8].x = 440;
+             obstacles[8].y = floor2 - 25;
+             
+             obstacles[8].x = 500;
+             obstacles[8].y = floor2;
+           
+             for(int i = 5; i < 9; i ++)
              {
-               obstacles[i].x = levels4[i];
+               rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
+             }
+             
+             
+             for(int i = 0; i  < 4; i ++)
+             {
+               obstacles[i].x = levels3[i];
                obstacles[i].y = floor1;
+               if(i > 4)
+               {
+                 obstacles[i].y = floor2;
+               }
+               
                rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
              }
              
