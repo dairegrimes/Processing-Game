@@ -4,7 +4,7 @@ class MainSquare extends GameObject
   
   boolean jumping = true;
   int lives = 0;
-  int level = 3;
+  int level = 2;
 
   MainSquare()
   {
@@ -191,10 +191,22 @@ class MainSquare extends GameObject
       
         {
 
-           obstacles[0].x = levels2[0];
+           obstacles[0].x = 300;
            obstacles[0].y = floor1;
+             
+           obstacles[1].x = 300;
+           obstacles[1].y = floor1 - 60;
            
            rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
+           rect(obstacles[1].x,obstacles[1].y,squareSize,squareSize);
+           
+            for(int i = 2; i < levels3.length; i ++ )
+             {
+               
+               obstacles[i].x = levels3[i];
+               obstacles[i].y = floor2;
+               rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
+             }
            
           
           
@@ -205,20 +217,7 @@ class MainSquare extends GameObject
        case 3:
       
         {
-          
-             obstacles[0].x = 300;
-             obstacles[0].y = floor1;
              
-             obstacles[1].x = 300;
-             obstacles[1].y = floor1 - 70;
-             
-             rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
-             rect(obstacles[1].x,obstacles[1].y,squareSize,squareSize);
-             
-             for(int i = 0; i < levels3.length; i ++ )
-             {
-               rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
-             }
           
         }
 

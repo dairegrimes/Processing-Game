@@ -11,7 +11,7 @@ class GameObject
    float distance;
    int[] levels1 = { 200 , 300 , 200, 300, 400};
    int[] levels2 = { 200, 400, 200, 400 };
-   int[] levels3 = { 200, 400 , 300 };
+   int[] levels3 = { 300, 300, 200, 400 , 300 };
    int[] levels4 = { 200, 400 , 300 };
    int[] levels5 = { 200, 400 , 300 };
    int[] levels6 = { 200, 400 , 300 , 500};
