@@ -20,7 +20,8 @@ class GameObject
    int[] levels9 = { 200, 400 , 300 , 500};
    int[] levels10 = { 200, 400 , 300 , 500};
    int index;
-   
+   int lives = 0;
+   int level = 1;
    
    GameObject()
    {
@@ -33,11 +34,15 @@ class GameObject
   GameObject(float x, float y)
   {
     pos = new PVector(x, y);
+    
+    for (int i = 0; i < obstacles.length; i++) 
+    {
+      obstacles[i] = new PVector();
+    }
  
   }
+  
+
  
 
-  
-  
-  
 }
