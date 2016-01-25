@@ -21,7 +21,7 @@ class GameObject
    int[] levels10 = { 200, 400 , 300 , 500};
    int index;
    int lives = 0;
-   int level = 1;
+   int level = 4;
    
    GameObject()
    {

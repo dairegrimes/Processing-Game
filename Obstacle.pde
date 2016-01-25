@@ -95,6 +95,23 @@ class Obstacle extends GameObject
         }
 
        break;
+       
+       
+       case 4:
+      
+        {
+          
+             obstacles[0].x = 300;
+             obstacles[0].y = floor1;
+             
+             
+             rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
+             
+          
+          
+          
+        }
+        break;
       
     } //  end obstacles()
   

@@ -19,6 +19,7 @@ void draw()
   obstacle.collide();
   square.lives();
   collisions();
+  
 }
 
 
