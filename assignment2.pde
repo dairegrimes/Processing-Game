@@ -16,7 +16,7 @@ void draw()
   square.go();
   square.jump();
   obstacle.obstacles();
-  obstacle.collide();
+
   square.lives();
   collisions();
   

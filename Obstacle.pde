@@ -1,8 +1,22 @@
 class Obstacle extends GameObject
 {
   
-
+  int x;
+  int[] levels1 = { 200 , 300 , 200, 300, 400};
+  int[] levels2 = { 300, 300, 200, 400 , 300 };
+  int[] levels3 = { 200, 220, 300 , 320, 300, 400, 420, 440, 500 };
+  int[] levels4 = { 200, 220, 400 , 420 };
+  int[] levels5 = { 200, 400 , 300 };
+  int[] levels6 = { 200, 400 , 300 , 500};
+  int[] levels7 = { 200, 400 , 300 , 500};
+  int[] levels8 = { 200, 400 , 300 , 500};
+  int[] levels9 = { 200, 400 , 300 , 500};
+  int[] levels10 = { 200, 400 , 300 , 500};
   
+  Obstacle()
+  {
+    x = 300;
+  }
     void obstacles()
   {
     
@@ -100,16 +114,11 @@ class Obstacle extends GameObject
        case 4:
       
         {
-          
-             obstacles[0].x = 300;
+             obstacles[0].x = x;
              obstacles[0].y = floor1;
-             
-             
              rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
-             
-          
-          
-          
+             x -= 3;
+
         }
         break;
       
@@ -120,30 +129,6 @@ class Obstacle extends GameObject
   
   
   
-   void collide()
-  {
 
-    for(index = 0; index < obstacles.length; index ++)
-       {
-         distance = PVector.dist(pos, obstacles[index]);
-         
-            if(distance <= squareSize)
-             {
-              if(firstFloor)
-              {
-                pos.x = 0;
-                lives ++;
-              }
-              
-              else
-              {
-                pos.x = width;
-                lives ++;
-              }
-             }
-        }
-        
-      
-} // end collide
   
 }
