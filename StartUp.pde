@@ -37,7 +37,7 @@ class StartUp
     {
       if(mousePressed)
       {
-        option1  = true;
+        flip  = false;
         tutorial1 = false;
       }
       

@@ -3,7 +3,7 @@ class Tutorial extends MainSquare
   
   Tutorial()
   {
-    // MAKE FLIP TRUE WHEN THIS IS DONE!!
+    // MAKE TUTORIAL TRUE WHEN THIS IS DONE!!
   }
   
   void render()
