@@ -28,14 +28,33 @@ class StartUp
     fill(0,0,255);
     
    
-    println("x " + mouseX);
-    println("y " + mouseY);
     
   } // end render()
   
-  boolean update()
+  void option1()
   {
+    if(mouseX >=160 && mouseX <= 240 && mouseY >=270 && mouseY <= 300)
+    {
+      if(mousePressed)
+      {
+        option1  = true;
+      }
+      
+    }
+
+  } // end option1()
+  
+  
+  void option2()
+  {
+    if(mouseX >=270 && mouseX <= 400 && mouseY >=270 && mouseY <= 300)
+    {
+      if(mousePressed)
+      {
+        exit();
+      }
+    }
      
-    return true;
-  } // end update()
+    
+  } // end option2()
 }

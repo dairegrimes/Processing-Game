@@ -5,7 +5,7 @@ void setup()
   obstacle = new Obstacle();
   startup = new StartUp();
 }
-
+boolean option1;
 MainSquare square;
 Obstacle obstacle;
 StartUp startup;
@@ -13,13 +13,23 @@ StartUp startup;
 void draw()
 {
   //background(177);
-  startup.render();
-
-  //square.go();
-  //square.jump();
-  //obstacle.obstacles();
-  //square.deaths();
-  //collisions();
+  
+  if(option1)
+  {
+    square.go();
+    square.jump();
+    obstacle.obstacles();
+    square.deaths();
+    collisions();
+  }
+  
+  if(option1 != true)
+  {
+    startup.render();
+    startup.option1();
+    startup.option2();
+  }
+  
   
 }
 
