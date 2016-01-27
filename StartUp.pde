@@ -1,9 +1,11 @@
 class StartUp
 {
   int x,y;
-  
+  boolean start,exit;
   StartUp()
   {
+    start = false;
+    exit = false;
     x = 200;
     y = 400;
   }
@@ -15,7 +17,7 @@ class StartUp
     line(0,square.floor2 + square.squareSize,width,square.floor2 + square.squareSize);
     textSize(64);
     fill(255,0,0);
-    text("SQUARE JUMP",300,100);
+    text("SQUARE JUMP",300,150);
     textAlign(CENTER);
     fill(0,0,255);
     
@@ -25,6 +27,15 @@ class StartUp
     text("Exit",400,300);
     fill(0,0,255);
     
+   
+    println("x " + mouseX);
+    println("y " + mouseY);
     
   } // end render()
+  
+  boolean update()
+  {
+     
+    return true;
+  } // end update()
 }

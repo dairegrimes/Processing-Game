@@ -14,6 +14,7 @@ void draw()
 {
   //background(177);
   startup.render();
+
   //square.go();
   //square.jump();
   //obstacle.obstacles();
