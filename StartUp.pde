@@ -38,7 +38,7 @@ class StartUp
       if(mousePressed)
       {
         option1  = true;
-        flip = false;
+        tutorial1 = false;
       }
       
     }
@@ -48,7 +48,7 @@ class StartUp
   
   void option2()
   {
-    if(mouseX >=270 && mouseX <= 400 && mouseY >=270 && mouseY <= 300)
+    if(mouseX >= 270 && mouseX <= 400 && mouseY >= 270 && mouseY <= 300)
     {
       if(mousePressed)
       {
