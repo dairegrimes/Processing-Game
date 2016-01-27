@@ -4,10 +4,11 @@ void setup()
   square = new MainSquare();
   obstacle = new Obstacle();
 
+
 }
 MainSquare square;
 Obstacle obstacle;
-
+float distance;
 
 void draw()
 {
@@ -17,7 +18,7 @@ void draw()
   square.jump();
   obstacle.obstacles();
 
-  square.lives();
+  square.deaths();
   collisions();
   
 }
@@ -26,7 +27,6 @@ void draw()
 void collisions()
 {
   float distance = 0.0f;
-  
   for(int index = 0; index < obstacle.obstacles.length; index ++)
        {
          distance = PVector.dist(square.pos, obstacle.obstacles[index]);
@@ -36,13 +36,13 @@ void collisions()
               if(square.firstFloor)
               {
                 square.pos.x = 0;
-                square.lives ++;
+                square.deaths ++;
               }
               
               else
               {
                 square.pos.x = width;
-                square.lives ++;
+                square.deaths ++;
               }
              }
         }

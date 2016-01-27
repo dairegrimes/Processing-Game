@@ -2,6 +2,7 @@ class Obstacle extends GameObject
 {
   
   int x;
+  boolean flip = true;
   int[] levels1 = { 200 , 300 , 200, 300, 400};
   int[] levels2 = { 300, 300, 200, 400 , 300 };
   int[] levels3 = { 200, 220, 300 , 320, 300, 400, 420, 440, 500 };
@@ -15,7 +16,7 @@ class Obstacle extends GameObject
   
   Obstacle()
   {
-    x = 300;
+    x = 700;
   }
     void obstacles()
   {
@@ -62,6 +63,7 @@ class Obstacle extends GameObject
                obstacles[i].x = levels2[i];
                obstacles[i].y = floor2;
                rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
+               
              }
            
           
@@ -114,10 +116,26 @@ class Obstacle extends GameObject
        case 4:
       
         {
-             obstacles[0].x = x;
-             obstacles[0].y = floor1;
-             rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
-             x -= 3;
+          
+             
+          
+             
+             
+               obstacles[0].x = x;
+               obstacles[0].y = floor1;
+               rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
+               x -= 3;
+              
+               if(square.pos.x == 3)
+               {
+                 x = 700;
+               }
+               
+             
+             
+             
+            
+              
 
         }
         break;

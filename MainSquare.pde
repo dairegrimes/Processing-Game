@@ -119,17 +119,11 @@ class MainSquare extends GameObject
   }// end jump
   
   
-   
-  
-  
-  void lives()
+  void deaths()
   {
-    text(lives,30,30);
-  } // lives()
-  
-  
+    text(deaths,30,30);
+  } // deaths()
 
-    
 }
   
 
