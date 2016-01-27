@@ -4,18 +4,22 @@ void setup()
   square = new MainSquare();
   obstacle = new Obstacle();
   startup = new StartUp();
+  option1 = false;
+  flip = true;
 }
 boolean option1;
+boolean flip;
 MainSquare square;
 Obstacle obstacle;
 StartUp startup;
 
 void draw()
 {
-  //background(177);
+  
   
   if(option1)
   {
+    background(177);
     square.go();
     square.jump();
     obstacle.obstacles();
@@ -23,7 +27,7 @@ void draw()
     collisions();
   }
   
-  if(option1 != true)
+  if(flip)
   {
     startup.render();
     startup.option1();
