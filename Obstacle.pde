@@ -1,6 +1,6 @@
 class Obstacle extends GameObject
 {
-  
+  // try putting the arrys into the constructor
   int x;
   boolean flip = true;
   int[] level1 = { 200 , 300 , 200, 300, 400};

@@ -4,10 +4,9 @@ void setup()
   square = new MainSquare();
   obstacle = new Obstacle();
   startup = new StartUp();
-  tutorial = new Tutorial();
   option1 = false;
   flip = true;
-  tutorial1 = false;
+
 }
 
 boolean option1;
@@ -16,7 +15,6 @@ boolean tutorial1;
 MainSquare square;
 Obstacle obstacle;
 StartUp startup;
-Tutorial tutorial;
 
 void draw()
 {
@@ -39,10 +37,7 @@ void draw()
     startup.option2();
   }
   
-  if(tutorial1)
-  {
-    
-  }
+
   
   
 }

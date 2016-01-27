@@ -1,8 +1,6 @@
 class MainSquare extends GameObject
 {
-  
   boolean jumping = true;
-  
   
   MainSquare()
   {
