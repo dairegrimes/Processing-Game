@@ -3,23 +3,59 @@ class Obstacle extends GameObject
   
   int x;
   boolean flip = true;
-  int[] levels1 = { 200 , 300 , 200, 300, 400};
-  int[] levels2 = { 300, 300, 200, 400 , 300 };
-  int[] levels3 = { 200, 220, 300 , 320, 300, 400, 420, 440, 500 };
-  int[] levels4 = { 200, 220, 400 , 420 };
-  int[] levels5 = { 200, 400 , 300 };
-  int[] levels6 = { 200, 400 , 300 , 500};
-  int[] levels7 = { 200, 400 , 300 , 500};
-  int[] levels8 = { 200, 400 , 300 , 500};
-  int[] levels9 = { 200, 400 , 300 , 500};
-  int[] levels10 = { 200, 400 , 300 , 500};
+  int[] level1 = { 200 , 300 , 200, 300, 400};
+  int[] level2 = { 300, 300, 200, 400 , 300 };
+  int[] level3 = { 200, 220, 300 , 320, 300, 400, 420, 440, 500 };
+  int[] level4 = { 200, 220, 400 , 420 };
+  int[] level5 = { 200, 400 , 300 };
+  int[] level6 = { 200, 400 , 300 , 500};
+  int[] level7 = { 200, 400 , 300 , 500};
+  int[] level8 = { 200, 400 , 300 , 500};
+  int[] level9 = { 200, 400 , 300 , 500};
+  int[] level10 = { 200, 400 , 300 , 500};
   
   Obstacle()
   {
-    x = 700;
+    
   }
     void obstacles()
   {
+    
+    if(level != 3)
+             {
+               obstacles[5].x = 0;
+               obstacles[5].y = 0;
+             
+               obstacles[6].x = 0;
+               obstacles[6].y = 0;
+             
+               obstacles[7].x = 0;
+               obstacles[7].y = 0;
+             
+               obstacles[8].x = 0;
+               obstacles[8].y = 0;
+             
+               obstacles[8].x = 0;
+               obstacles[8].y = 0;
+           
+                for(int i = 5; i < 9; i ++)
+               {
+                 rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
+               }
+             
+             
+               for(int i = 0; i  < 4; i ++)
+               {
+                 obstacles[i].x = 0;
+                 obstacles[i].y = 0;
+                 if(i > 4)
+                 {
+                   obstacles[i].y = 0;
+                 }
+               
+                 rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
+               }
+             }
     
 
     switch(level)
@@ -27,9 +63,9 @@ class Obstacle extends GameObject
       case 1:
       
         {
-          for(int i = 0; i < levels1.length; i ++)
+          for(int i = 0; i < level1.length; i ++)
           {
-             obstacles[i].x = levels1[i];
+             obstacles[i].x = level1[i];
              obstacles[i].y = floor1;
              if(i > 1)
              {
@@ -40,9 +76,9 @@ class Obstacle extends GameObject
          
           }
           
-          
+          break;
         }
-        break;
+        
       
       case 2:
       
@@ -57,10 +93,10 @@ class Obstacle extends GameObject
            rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
            rect(obstacles[1].x,obstacles[1].y,squareSize,squareSize);
            
-            for(int i = 2; i < levels2.length; i ++ )
+            for(int i = 2; i < level1.length; i ++ )
              {
                
-               obstacles[i].x = levels2[i];
+               obstacles[i].x = level1[i];
                obstacles[i].y = floor2;
                rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
                
@@ -70,7 +106,7 @@ class Obstacle extends GameObject
           
         }
 
-       break;
+      break;
        
        case 3:
       
@@ -98,7 +134,7 @@ class Obstacle extends GameObject
              
              for(int i = 0; i  < 4; i ++)
              {
-               obstacles[i].x = levels3[i];
+               obstacles[i].x = level1[i];
                obstacles[i].y = floor1;
                if(i > 4)
                {
@@ -108,42 +144,35 @@ class Obstacle extends GameObject
                rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
              }
              
+             
+             
+            
         }
 
-       break;
        
+       break;
        
        case 4:
       
         {
-          
-             
-          
-             
-             
+               
                obstacles[0].x = x;
                obstacles[0].y = floor1;
                rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
-               x -= 3;
+               x -= 7;
               
                if(square.pos.x == 3)
                {
                  x = 700;
                }
-               
              
-             
-             
-            
-              
-
-        }
-        break;
-      
-    } //  end obstacles()
+         }
+        
+      break;
+    } 
   
   
-  }
+  }//  end obstacles()
   
   
   

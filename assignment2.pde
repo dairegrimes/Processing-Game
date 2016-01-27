@@ -3,23 +3,22 @@ void setup()
   size(600,600);
   square = new MainSquare();
   obstacle = new Obstacle();
-
+  startup = new StartUp();
 
 }
 MainSquare square;
 Obstacle obstacle;
-float distance;
+StartUp startup;
 
 void draw()
 {
   background(177);
-
-  square.go();
-  square.jump();
-  obstacle.obstacles();
-
-  square.deaths();
-  collisions();
+  
+  //square.go();
+  //square.jump();
+  //obstacle.obstacles();
+  //square.deaths();
+  //collisions();
   
 }
 
@@ -30,7 +29,7 @@ void collisions()
   for(int index = 0; index < obstacle.obstacles.length; index ++)
        {
          distance = PVector.dist(square.pos, obstacle.obstacles[index]);
-         
+          println(distance);
             if(distance <= square.squareSize)
              {
               if(square.firstFloor)

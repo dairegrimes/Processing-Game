@@ -4,13 +4,13 @@ class GameObject
    float floor1 = width / 3;
    float floor2 = (width / 3) * 2;
    PVector[] obstacles = new PVector[9];
-   PVector pos;
-   int speed = 3;
    float jumpSpeed = 2.5;
    int squareSize = 20;
-   int index;
+   PVector pos;
+   int speed = 3;
    int deaths = 0;
-   int level = 4;
+   int level = 3;
+
    
    GameObject()
    {
