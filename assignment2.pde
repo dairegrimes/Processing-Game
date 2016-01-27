@@ -4,16 +4,16 @@ void setup()
   square = new MainSquare();
   obstacle = new Obstacle();
   startup = new StartUp();
-
 }
+
 MainSquare square;
 Obstacle obstacle;
 StartUp startup;
 
 void draw()
 {
-  background(177);
-  
+  //background(177);
+  startup.render();
   //square.go();
   //square.jump();
   //obstacle.obstacles();
