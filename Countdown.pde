@@ -9,7 +9,7 @@ class Countdown
   
   void render()
   {
-    background(177,255,0);
+    background(255);
     textSize(32);
     fill(255,0,0);
     text("Press enter to jump",300,100);
@@ -21,5 +21,10 @@ class Countdown
       number --;
     }
     
+    if(number == 0)
+    {
+      count = false;
+      option1 = true;
+    }
   }
 }

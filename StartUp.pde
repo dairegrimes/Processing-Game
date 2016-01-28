@@ -10,7 +10,7 @@ class StartUp
   
   void render()
   {
-    background(177,255,0);
+    background(255);
     line(0,square.floor1 + square.squareSize,width,square.floor1 + square.squareSize);
     line(0,square.floor2 + square.squareSize,width,square.floor2 + square.squareSize);
     textSize(64);
@@ -31,12 +31,12 @@ class StartUp
   
   void option1()
   {
-    if(mouseX >=160 && mouseX <= 240 && mouseY >=270 && mouseY <= 300)
+    if(mouseX >= 160 && mouseX <= 240 && mouseY >=270 && mouseY <= 300)
     {
       if(mousePressed)
       {
         start  = false;
-        option1 = true;
+        count = true;
       }
       
     }

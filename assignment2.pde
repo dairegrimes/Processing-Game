@@ -7,12 +7,12 @@ void setup()
   countdown = new Countdown();
   option1 = false;
   start = true;
-  
+  count = false;
 }
 
 boolean option1;
 boolean start;
-boolean tutorial1;
+boolean count;
 MainSquare square;
 Obstacle obstacle;
 StartUp startup;
@@ -24,7 +24,7 @@ void draw()
   
   if(option1)
   {
-    background(177,255,0);
+    background(255);
     square.go();
     square.jump();
     obstacle.obstacles();
@@ -33,11 +33,15 @@ void draw()
   }
   
   if(start)
+ {
+    startup.render();
+    startup.option1();
+    startup.option2();
+  }
+  
+  if(count)
   {
     countdown.render();
-    //startup.render();
-    //startup.option1();
-    //startup.option2();
   }
   
 
