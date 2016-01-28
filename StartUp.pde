@@ -10,7 +10,7 @@ class StartUp
   
   void render()
   {
-    background(255);
+    background(177,255,255);
     line(0,square.floor1 + square.squareSize,width,square.floor1 + square.squareSize);
     line(0,square.floor2 + square.squareSize,width,square.floor2 + square.squareSize);
     textSize(64);

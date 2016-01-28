@@ -9,7 +9,7 @@ class Countdown
   
   void render()
   {
-    background(255);
+    background(177,255,255);
     textSize(32);
     fill(255,0,0);
     text("Press enter to jump",300,100);

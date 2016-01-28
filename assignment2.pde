@@ -24,7 +24,7 @@ void draw()
   
   if(option1)
   {
-    background(255);
+    background(177,255,255);
     square.go();
     square.jump();
     obstacle.obstacles();
