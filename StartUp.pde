@@ -1,11 +1,9 @@
 class StartUp
 {
   int x,y;
-  boolean start,exit;
+  
   StartUp()
   {
-    start = false;
-    exit = false;
     x = 200;
     y = 400;
   }
@@ -37,7 +35,7 @@ class StartUp
     {
       if(mousePressed)
       {
-        flip  = false;
+        start  = false;
         option1 = true;
       }
       
@@ -59,14 +57,3 @@ class StartUp
     
   } // end option2()
 }
-
-
-/*
-    textSize(32);
-    fill(255,0,0);
-    text("Press enter to jump",300,100);
-    text("over the obstacles!",300,300);
-    textAlign(CENTER);
-    
-
-*/

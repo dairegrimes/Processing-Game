@@ -4,17 +4,19 @@ void setup()
   square = new MainSquare();
   obstacle = new Obstacle();
   startup = new StartUp();
+  countdown = new Countdown();
   option1 = false;
-  flip = true;
-
+  start = true;
+  
 }
 
 boolean option1;
-boolean flip;
+boolean start;
 boolean tutorial1;
 MainSquare square;
 Obstacle obstacle;
 StartUp startup;
+Countdown countdown;
 
 void draw()
 {
@@ -22,7 +24,7 @@ void draw()
   
   if(option1)
   {
-    background(177);
+    background(177,255,0);
     square.go();
     square.jump();
     obstacle.obstacles();
@@ -30,11 +32,12 @@ void draw()
     collisions();
   }
   
-  if(flip)
+  if(start)
   {
-    startup.render();
-    startup.option1();
-    startup.option2();
+    countdown.render();
+    //startup.render();
+    //startup.option1();
+    //startup.option2();
   }
   
 
