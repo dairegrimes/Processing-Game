@@ -2,19 +2,22 @@ void setup()
 {
   size(600,600);
   square = new MainSquare();
-  obstacle = new Obstacle();
   startup = new StartUp();
   countdown = new Countdown();
   option1 = true;
   start = false;
   count = false;
+
+    Obstacle obstacle = new Obstacle(300,200);
+    gameObjects.add(obstacle);
 }
+
+ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
 
 boolean option1;
 boolean start;
 boolean count;
 MainSquare square;
-Obstacle obstacle;
 StartUp startup;
 Countdown countdown;
 
@@ -25,18 +28,23 @@ void draw()
   if(option1)
   {
     background(177,255,255);
-    square.go();
-    square.jump();
-    obstacle.obstacles();
+    square.render();
     square.deaths();
+    
+    for(int i = gameObjects.size() - 1 ; i >= 0   ;i --)
+  {
+    GameObject go = gameObjects.get(i);
+    go.render();
+    
+  }
     collisions();
   }
   
   if(start)
  {
-    startup.render();
-    startup.option1();
-    startup.option2();
+    //startup.render();
+    //startup.option1();
+    //startup.option2();
   }
   
   if(count)
@@ -53,12 +61,14 @@ void draw()
 void collisions()
 {
   float distance = 0.0f;
-  for(int index = 0; index < obstacle.obstacles.length; index ++)
+  for(int index = 0; index < 1; index ++)
        {
-         distance = PVector.dist(square.pos, obstacle.obstacles[index]);
-          println(distance);
+         GameObject go = gameObjects.get(index);
+         
+         distance = PVector.dist(square.pos, go.obstacles);
+         println(distance);
             if(distance <= square.squareSize)
-             {
+            {
               if(square.firstFloor)
               {
                 square.pos.x = 0;
