@@ -31,7 +31,7 @@ class StartUp
   
   void option1()
   {
-    if(mouseX >= 160 && mouseX <= 240 && mouseY >=270 && mouseY <= 300)
+    if(mouseX >= 160 && mouseX <= 240 && mouseY >= 270 && mouseY <= 300)
     {
       if(mousePressed)
       {

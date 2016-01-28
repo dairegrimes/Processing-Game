@@ -1,4 +1,4 @@
-class GameObject
+abstract class GameObject
 {
    boolean firstFloor = true;
    float floor1 = width / 3;

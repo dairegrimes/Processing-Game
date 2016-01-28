@@ -5,8 +5,8 @@ void setup()
   obstacle = new Obstacle();
   startup = new StartUp();
   countdown = new Countdown();
-  option1 = false;
-  start = true;
+  option1 = true;
+  start = false;
   count = false;
 }
 

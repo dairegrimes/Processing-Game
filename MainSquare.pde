@@ -10,9 +10,10 @@ class MainSquare extends GameObject
   
   void go()
   {
+  
     line(0,floor1 + squareSize,width,floor1 + squareSize);
     line(0,floor2 + squareSize,width,floor2 + squareSize);
-    
+
      rect(pos.x,pos.y,squareSize,squareSize);
      fill(0);
      pos.x += speed;
@@ -119,7 +120,12 @@ class MainSquare extends GameObject
   
   void deaths()
   {
-    text(deaths,30,30);
+    textSize(16);
+    text("Deaths:  " + deaths,30,30);
+    
+    textSize(16);
+    text("Level:  " + level,250,30);
+   
   } // deaths()
 
 }

@@ -173,7 +173,7 @@ class Obstacle extends GameObject
   
   
   }//  end obstacles()
-  
+
   
   
 
