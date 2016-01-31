@@ -30,7 +30,7 @@ class MainSquare extends GameObject
       // SECOND FLOOR
       if(pos.x <= 0)
       {
-        //obstacle.level ++;
+        level ++;
         pos.y = floor1;
         speed *= (-1);
         firstFloor =! firstFloor;

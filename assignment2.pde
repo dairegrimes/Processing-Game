@@ -6,13 +6,11 @@ void setup()
   countdown = new Countdown();
   option1 = true;
   start = false;
-  count = false;
-
-    Obstacle obstacle = new Obstacle(300,200);
-    gameObjects.add(obstacle);
+  count = false;   
+  obstacle = new Obstacle();
 }
 
-ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
+
 
 boolean option1;
 boolean start;
@@ -20,6 +18,7 @@ boolean count;
 MainSquare square;
 StartUp startup;
 Countdown countdown;
+Obstacle obstacle;
 
 void draw()
 {
@@ -30,43 +29,33 @@ void draw()
     background(177,255,255);
     square.render();
     square.deaths();
-    
-    for(int i = gameObjects.size() - 1 ; i >= 0   ;i --)
-  {
-    GameObject go = gameObjects.get(i);
-    go.render();
-    
-  }
+    obstacle.render();
     collisions();
   }
   
   if(start)
  {
-    //startup.render();
-    //startup.option1();
-    //startup.option2();
+    startup.render();
+    startup.option1();
+    startup.option2();
   }
   
   if(count)
   {
     countdown.render();
   }
-  
 
-  
-  
 }
 
 
 void collisions()
 {
   float distance = 0.0f;
-  for(int index = 0; index < 1; index ++)
+  for(int i = 0; i < obstacle.obstacles.length; i ++)
        {
-         GameObject go = gameObjects.get(index);
          
-         distance = PVector.dist(square.pos, go.obstacles);
-         println(distance);
+         distance = PVector.dist(square.pos, obstacle.obstacles[i]);
+        
             if(distance <= square.squareSize)
             {
               if(square.firstFloor)

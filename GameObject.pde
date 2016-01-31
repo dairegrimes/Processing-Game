@@ -5,7 +5,7 @@ abstract class GameObject
    float floor2 = (width / 3) * 2;
    float jumpSpeed = 2.5;
    int squareSize = 20;
-   PVector obstacles;
+   PVector[] obstacles = new PVector[6];
    PVector pos;
    int speed = 3;
    int deaths = 0;
@@ -20,7 +20,12 @@ abstract class GameObject
     GameObject(float x, float y)
   {
     pos = new PVector(x, y);
-    obstacles = new PVector(x,y);
+
+    for (int i = 0; i < obstacles.length; i++) 
+     {
+       obstacles[i] = new PVector();
+     }
+
   }
     
     abstract void render();
