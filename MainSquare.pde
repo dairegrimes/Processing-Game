@@ -34,6 +34,7 @@ class MainSquare extends GameObject
         pos.y = floor1;
         speed *= (-1);
         firstFloor =! firstFloor;
+        stage ++;
       }    
 
     // CODE FOR JUMPING
@@ -119,7 +120,7 @@ class MainSquare extends GameObject
     text("Deaths:  " + deaths,30,30);
     
     textSize(16);
-    text("Level:  " + level,250,30);
+    text(stage + " / 10",250,30);
    
   } // deaths()
 
