@@ -80,9 +80,9 @@ void render()
          obstacles[0].y = floor1;
          rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
          
-         //obstacles[1].x = 400;
-         //obstacles[1].y = floor1 - 60;
-         //rect(obstacles[1].x,obstacles[1].y,squareSize,squareSize);
+         obstacles[1].x = 400;
+         obstacles[1].y = floor1 - 60;
+         rect(obstacles[1].x,obstacles[1].y,squareSize,squareSize);
          
           obstacles[2].x = x;
           obstacles[2].y = floor1;
@@ -116,13 +116,12 @@ void render()
               z =  - 1000;
             }
             
-           
-            
+            obstacles[5].x = 300;
+            obstacles[5].y = floor2;
+            rect(obstacles[5].x,obstacles[5].y,squareSize,squareSize);
          }
-          
          
-          
-    }
+     }
     break;
     
     
