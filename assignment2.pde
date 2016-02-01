@@ -26,7 +26,7 @@ void draw()
   
   if(option1)
   {
-    background(177,255,255);
+    background(177);
     square.render();
     square.deaths();
     obstacle.render();
