@@ -137,14 +137,19 @@ void render()
     
        case 4:
     {     
+      
+      
           obstacles[0].x = 400;
           obstacles[0].y = a;
           rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
           a += 10;
           
-          if(square.pos.x <= 300)
+          if(square.firstFloor)
           {
-            a = 100;
+            if(square.pos.x <= 300)
+            {
+              a = 100;
+            }
           }
           
           if(a >= floor1)
@@ -157,9 +162,13 @@ void render()
           rect(obstacles[1].x,obstacles[1].y,squareSize,squareSize);
           b += 10;
           
-          if(square.pos.x <= 150)
+          if(square.firstFloor)
           {
-            b = 100;
+            if(square.pos.x <= 150)
+            {
+              b = 100;
+            }
+            
           }
           
           if(b >= floor1)
