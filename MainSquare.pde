@@ -2,16 +2,14 @@ class MainSquare extends GameObject
 {
   boolean jumping = true;
   boolean spin = false;
-
-  float u;
+  float spin2;
+  
   MainSquare()
   {
     super(0, height / 3);
-    u = 0;
+    spin2 = 0;
 
   }
-  
-  
   
   void render()
   {
@@ -22,18 +20,18 @@ class MainSquare extends GameObject
      //rect(pos.x,pos.y,squareSize,squareSize);
       pushMatrix();
       translate(pos.x + 10, pos.y + 10);
-      rotate(u);
+      rotate(spin2);
       rect(-10, -10, squareSize, squareSize);
       popMatrix();
 
   
       if(spin)
       {
-         u += 0.1;
+         spin2 += 0.1;
      
-         if(u >= 4)
+         if(spin2 >= 4)
          {
-             u = 0;
+             spin2 = 0;
              spin =! spin;
          }
       }
@@ -80,7 +78,7 @@ class MainSquare extends GameObject
  
             if(key == ' ')
             {
-              if(u == 0)
+              if(spin2 == 0)
               {
                 spin =! spin;
                 jumping =! jumping;
@@ -122,7 +120,7 @@ class MainSquare extends GameObject
  
             if(key == ' ')
             {
-              if(u == 0)
+              if(spin2 == 0)
               {
                 spin =! spin;
                 jumping =! jumping;
