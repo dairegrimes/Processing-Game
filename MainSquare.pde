@@ -1,10 +1,14 @@
 class MainSquare extends GameObject
 {
   boolean jumping = true;
-  
+  boolean spin = false;
+
+  float u;
   MainSquare()
   {
     super(0, height / 3);
+    u = 0;
+
   }
   
   
@@ -15,8 +19,28 @@ class MainSquare extends GameObject
     line(0,floor1 + squareSize,width,floor1 + squareSize);
     line(0,floor2 + squareSize,width,floor2 + squareSize);
 
-     rect(pos.x,pos.y,squareSize,squareSize);
+     //rect(pos.x,pos.y,squareSize,squareSize);
+      pushMatrix();
+      translate(pos.x + 10, pos.y + 10);
+      rotate(u);
+      rect(-10, -10, squareSize, squareSize);
+      popMatrix();
+
+  
+      if(spin)
+      {
+         u += 0.1;
+     
+         if(u >= 4)
+         {
+             u = 0;
+             spin =! spin;
+         }
+      }
+     
      fill(0);
+     
+     
      pos.x += speed;
     
       // FIRST FLOOR
@@ -56,7 +80,12 @@ class MainSquare extends GameObject
  
             if(key == ' ')
             {
-              jumping =! jumping;
+              if(u == 0)
+              {
+                spin =! spin;
+                jumping =! jumping;
+              }
+              
             } 
           }
         }
@@ -66,7 +95,7 @@ class MainSquare extends GameObject
       {
         pos.y -= jumpSpeed;
    
-    
+        
         if(pos.y <= 150)
         {
           pos.y = 150;
@@ -93,7 +122,11 @@ class MainSquare extends GameObject
  
             if(key == ' ')
             {
-              jumping =! jumping;
+              if(u == 0)
+              {
+                spin =! spin;
+                jumping =! jumping;
+              }
             } 
           }
         }
