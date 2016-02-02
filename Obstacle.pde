@@ -6,6 +6,7 @@ class Obstacle extends GameObject
   float a;
   float b;
   float c;
+  float d;
   int[] level1 = { 200, 300, 400 };
   int[] level2 = { 200, 300, 450 };
 
@@ -16,6 +17,8 @@ class Obstacle extends GameObject
    z = - 1000;
    a = 100;
    b = 100;
+   c = 500;
+   d = 500;
  }
  
   
@@ -164,6 +167,44 @@ void render()
             b = floor1;
           }
           
+          obstacles[2].x = 400;
+          obstacles[2].y = c;
+          rect(obstacles[2].x,obstacles[2].y,squareSize,squareSize);
+          
+          obstacles[3].x = 200;
+          obstacles[3].y = d;
+          rect(obstacles[3].x,obstacles[3].y,squareSize,squareSize);
+          if(!square.firstFloor)
+         { 
+          
+          c -= 10;
+
+          if(square.pos.x >= 500)
+          {
+            c = 500;
+          }
+          
+          if(c <= floor2)
+          {
+            c = floor2;
+          }
+
+          
+          
+          
+          d -= 10;
+          
+          if(square.pos.x >= 250)
+          {
+            d = 500;
+          }
+          
+          if(d <= floor2)
+          {
+            d = floor2;
+          }
+          
+         }
     }
     break;
     
