@@ -9,7 +9,7 @@ abstract class GameObject
    PVector pos;
    int speed = 3;
    int deaths = 0;
-   int level = 4;
+   int level = 5;
    int stage = 1;
    
    GameObject()

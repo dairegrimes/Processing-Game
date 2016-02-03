@@ -3,9 +3,8 @@ class Obstacle extends GameObject
   float x;
   float y;
   float z;
-  float a;
-  float b;
   float c;
+  float a;
   float d;
   float e;
   float f;
@@ -20,8 +19,6 @@ class Obstacle extends GameObject
    x = 700;
    y = - 100;
    z = - 1000;
-   a = 100;
-   b = 100;
    c = 500;
    d = 500;
    e = 100;
@@ -29,6 +26,7 @@ class Obstacle extends GameObject
    fspeed = 4;
    f = 200;
    g = 0;
+   a = -1000;
  }
  
   
@@ -277,9 +275,28 @@ void render()
             fspeed *= (-1);
           }
           
-          obstacles[3].x = 300;
-          obstacles[3].y = floor1;
-          rect(obstacles[3].x,obstacles[3].y,squareSize,squareSize);
+         
+          
+          obstacles[3].x = 400;
+         obstacles[3].y = floor2 - 60;
+         rect(obstacles[3].x,obstacles[3].y,squareSize,squareSize);
+         
+          obstacles[4].x = 400;
+          obstacles[4].y = floor2;
+          rect(obstacles[4].x,obstacles[4].y,squareSize,squareSize);
+        
+        if(!square.firstFloor)
+        {
+          obstacles[5].x = a;
+          obstacles[5].y = floor2;
+          rect(obstacles[5].x,obstacles[5].y,squareSize,squareSize);
+          a += 7;
+            
+            if(square.pos.x == 597)
+            {
+              a =  - 1000;
+            }
+        } 
           
     }
     break;
