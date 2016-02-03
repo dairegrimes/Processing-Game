@@ -4,26 +4,34 @@ void setup()
   square = new MainSquare();
   startup = new StartUp();
   countdown = new Countdown();
+  obstacle = new Obstacle();
   option1 = true;
   start = false;
   count = false;   
-  obstacle = new Obstacle();
+  hit = false;
+
+    for (int i = 0; i < parts.length; i++)
+   {
+     parts [i] = new Explode ();
+   }
+
 }
 
-
-
+float x;
+float y;
 boolean option1;
 boolean start;
 boolean count;
+boolean hit;
+
 MainSquare square;
 StartUp startup;
 Countdown countdown;
 Obstacle obstacle;
+Explode [] parts = new Explode [50];
 
 void draw()
-{
-  
-  
+{ 
   if(option1)
   {
     background(177,255,255);
@@ -31,6 +39,17 @@ void draw()
     square.deaths();
     obstacle.render();
     collisions();
+    if(hit)
+    {
+      collide();
+      
+      if(frameCount % 100 == 0)
+      {
+        hit =! hit;
+      }
+      
+    } 
+        
   }
   
   if(start)
@@ -58,6 +77,7 @@ void collisions()
         
             if(distance <= square.squareSize)
             {
+              //hit =! hit;
               if(square.firstFloor)
               {
                 square.pos.x = 0;
@@ -72,3 +92,11 @@ void collisions()
              }
         }
 } // end collisions()
+
+void collide()
+{
+        for (int j = 0; j < parts.length; j++) 
+       {
+        parts [j].update();
+      }
+} // end collide()

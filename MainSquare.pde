@@ -3,12 +3,12 @@ class MainSquare extends GameObject
   boolean jumping = true;
   boolean spin = false;
   float spin2;
-  
+  float spinSpeed;
   MainSquare()
   {
     super(0, height / 3);
     spin2 = 0;
-
+    spinSpeed = 0.1;
   }
   
   void render()
@@ -27,7 +27,7 @@ class MainSquare extends GameObject
   
       if(spin)
       {
-         spin2 += 0.1;
+         spin2 += spinSpeed;
      
          if(spin2 >= 4)
          {
@@ -46,6 +46,7 @@ class MainSquare extends GameObject
       {
         pos.y = floor2;
         speed *= (-1);
+        //spinSpeed *= (-1);
         firstFloor =! firstFloor;
       }
       
@@ -53,6 +54,7 @@ class MainSquare extends GameObject
       if(pos.x <= 0)
       {
         level ++;
+        //spinSpeed *= (-1);
         pos.y = floor1;
         speed *= (-1);
         firstFloor =! firstFloor;

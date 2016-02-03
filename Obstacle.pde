@@ -7,6 +7,10 @@ class Obstacle extends GameObject
   float b;
   float c;
   float d;
+  float e;
+  float f;
+  float espeed;
+  float fspeed;
   int[] level1 = { 200, 300, 400 };
   int[] level2 = { 200, 300, 450 };
 
@@ -19,6 +23,10 @@ class Obstacle extends GameObject
    b = 100;
    c = 500;
    d = 500;
+   e = 100;
+   espeed = 4;
+   fspeed = 4;
+   f = 200;
  }
  
   
@@ -221,8 +229,43 @@ void render()
     
        case 5:
     {
+      
+          obstacles[0].x = e;
+          obstacles[0].y = floor1;
+          rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
+          e += espeed;
+          if(e >= 200)
+          {
+            e = 200;
+            espeed *= (-1);
+          }
+          if(e <= 100)
+          {
+            e = 100;
+            espeed *= (-1);
+          }
+         
           
-       
+          obstacles[2].x = 300;
+          obstacles[2].y = floor1;
+          rect(obstacles[2].x,obstacles[2].y,squareSize,squareSize);
+          
+          
+          obstacles[1].x = 400;
+          obstacles[1].y = f;
+          rect(obstacles[1].x,obstacles[1].y,squareSize,squareSize);
+          f -= fspeed;
+          if(f <= 100)
+          {
+            f = 100;
+            fspeed *= (-1);
+          }
+          if(f >= 200)
+          {
+            f = 200;
+            fspeed *= (-1);
+          }
+          
     }
     break;
   } // end switch
