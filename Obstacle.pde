@@ -9,6 +9,7 @@ class Obstacle extends GameObject
   float d;
   float e;
   float f;
+  float g;
   float espeed;
   float fspeed;
   int[] level1 = { 200, 300, 400 };
@@ -27,6 +28,7 @@ class Obstacle extends GameObject
    espeed = 4;
    fspeed = 4;
    f = 200;
+   g = 0;
  }
  
   
@@ -147,48 +149,48 @@ void render()
     {     
       
       
-          obstacles[0].x = 400;
-          obstacles[0].y = a;
+          obstacles[0].x = 450;
+          obstacles[0].y = x;
           rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
-          a += 10;
+          x += 10;
           
           if(square.firstFloor)
           {
-            if(square.pos.x <= 300)
+            if(square.pos.x <= 350)
             {
-              a = 100;
+              x = 100;
             }
           }
           
-          if(a >= floor1)
+          if(x >= floor1)
           {
-            a = floor1;
+            x = floor1;
           }
           
-          obstacles[1].x = 200;
-          obstacles[1].y = b;
+          obstacles[1].x = 150;
+          obstacles[1].y = y;
           rect(obstacles[1].x,obstacles[1].y,squareSize,squareSize);
-          b += 10;
+          y += 10;
           
           if(square.firstFloor)
           {
-            if(square.pos.x <= 150)
+            if(square.pos.x <= 100)
             {
-              b = 100;
+              y = 100;
             }
             
           }
           
-          if(b >= floor1)
+          if(y >= floor1)
           {
-            b = floor1;
+            y = floor1;
           }
           
           obstacles[2].x = 400;
           obstacles[2].y = c;
           rect(obstacles[2].x,obstacles[2].y,squareSize,squareSize);
           
-          obstacles[3].x = 200;
+          obstacles[3].x = 150;
           obstacles[3].y = d;
           rect(obstacles[3].x,obstacles[3].y,squareSize,squareSize);
           if(!square.firstFloor)
@@ -211,7 +213,7 @@ void render()
           
           d -= 10;
           
-          if(square.pos.x >= 250)
+          if(square.pos.x >= 200)
           {
             d = 500;
           }
@@ -222,6 +224,15 @@ void render()
           }
           
          }
+         
+          obstacles[4].x = 300;
+          obstacles[4].y = floor1;
+          rect(obstacles[4].x,obstacles[4].y,squareSize,squareSize);
+          
+          obstacles[5].x = 300;
+          obstacles[5].y = floor2;
+          rect(obstacles[5].x,obstacles[5].y,squareSize,squareSize);
+         
     }
     break;
     
@@ -265,6 +276,10 @@ void render()
             f = 200;
             fspeed *= (-1);
           }
+          
+          obstacles[3].x = 300;
+          obstacles[3].y = floor1;
+          rect(obstacles[3].x,obstacles[3].y,squareSize,squareSize);
           
     }
     break;
