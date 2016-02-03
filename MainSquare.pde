@@ -46,15 +46,13 @@ class MainSquare extends GameObject
       {
         pos.y = floor2;
         speed *= (-1);
-        //spinSpeed *= (-1);
         firstFloor =! firstFloor;
       }
       
       // SECOND FLOOR
       if(pos.x <= 0)
       {
-        level ++;
-        //spinSpeed *= (-1);
+        level = (int)random(1,6);
         pos.y = floor1;
         speed *= (-1);
         firstFloor =! firstFloor;

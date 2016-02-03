@@ -54,6 +54,44 @@ class StartUp
       }
     }
      
-    
   } // end option2()
+  
+  
+  void end()
+  {
+      background(177,255,255);
+      line(0,square.floor1 + square.squareSize,width,square.floor1 + square.squareSize);
+      line(0,square.floor2 + square.squareSize,width,square.floor2 + square.squareSize);
+      textSize(32);
+      fill(255,0,0);
+      text("GAME OVER",300,150);
+      text("Your deaths: " + square.deaths,300,300);
+      text("Play Again",200,500);
+      text("Exit",400,500);
+      textAlign(CENTER);
+      fill(0,0,255);
+      
+      if(mouseX >= 160 && mouseX <= 240 && mouseY >= 470 && mouseY <= 500)
+      {
+        if(mousePressed)
+        {
+          start  = true;
+          end = false;
+        }
+      
+      }
+    
+    
+      if(mouseX >= 270 && mouseX <= 400 && mouseY >= 470 && mouseY <= 500)
+      {
+        if(mousePressed)
+        {
+          exit();
+        }
+      
+      }
+      
+     
+    
+  } //  end end()
 }

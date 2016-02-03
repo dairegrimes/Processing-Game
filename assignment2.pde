@@ -9,7 +9,7 @@ void setup()
   start = false;
   count = false;   
   hit = false;
-
+  end = false;
     for (int i = 0; i < parts.length; i++)
    {
      parts [i] = new Explode ();
@@ -23,7 +23,7 @@ boolean option1;
 boolean start;
 boolean count;
 boolean hit;
-
+boolean end;
 MainSquare square;
 StartUp startup;
 Countdown countdown;
@@ -32,6 +32,18 @@ Explode [] parts = new Explode [50];
 
 void draw()
 { 
+  if(square.stage == 11)
+  {
+    option1 = false;
+    end = true;
+  }
+  
+  if(end)
+  {
+    startup.end();
+  }
+  
+  
   if(option1)
   {
     background(177,255,255);

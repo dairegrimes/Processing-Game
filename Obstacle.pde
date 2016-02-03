@@ -11,8 +11,8 @@ class Obstacle extends GameObject
   float g;
   float espeed;
   float fspeed;
-  int[] level1 = { 200, 300, 400 };
-  int[] level2 = { 200, 300, 450 };
+  int[] level1 = { 150, 300, 450 };
+  int[] level2 = { 150, 300, 450 };
 
  Obstacle()
  {
@@ -33,6 +33,7 @@ class Obstacle extends GameObject
   
 void render()
 {
+ 
   
   switch(square.level)
   {
@@ -91,13 +92,13 @@ void render()
        case 3:
     {  
       
-         obstacles[0].x = 400;
-         obstacles[0].y = floor1;
-         rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
+          obstacles[0].x = 400;
+          obstacles[0].y = floor1;
+          rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
          
-         obstacles[1].x = 400;
-         obstacles[1].y = floor1 - 60;
-         rect(obstacles[1].x,obstacles[1].y,squareSize,squareSize);
+          obstacles[1].x = 400;
+          obstacles[1].y = floor1 - 60;
+          rect(obstacles[1].x,obstacles[1].y,squareSize,squareSize);
          
           obstacles[5].x = 300;
           obstacles[5].y = floor2;
@@ -278,8 +279,8 @@ void render()
          
           
           obstacles[3].x = 400;
-         obstacles[3].y = floor2 - 60;
-         rect(obstacles[3].x,obstacles[3].y,squareSize,squareSize);
+          obstacles[3].y = floor2 - 60;
+          rect(obstacles[3].x,obstacles[3].y,squareSize,squareSize);
          
           obstacles[4].x = 400;
           obstacles[4].y = floor2;

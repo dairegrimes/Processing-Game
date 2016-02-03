@@ -9,12 +9,13 @@ abstract class GameObject
    PVector pos;
    int speed = 3;
    int deaths = 0;
-   int level = 5;
-   int stage = 1;
+   int level = (int)random(1,6);;
+   int stage = 0;
    
    GameObject()
    {
      this (0, width / 3);
+     
    }
    
     GameObject(float x, float y)
