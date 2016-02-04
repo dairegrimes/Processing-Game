@@ -8,9 +8,9 @@ abstract class GameObject
    PVector[] obstacles = new PVector[6];
    PVector pos;
    int speed = 3;
-   int deaths = 0;
+   int collisions = 0;
    int[] array = new int [2];
-   int level = 4;//(int)random(1,6);
+   int level = (int)random(1,6);
    int stage = 1;
    
    GameObject()

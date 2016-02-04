@@ -53,7 +53,7 @@ void draw()
   {
     background(177,255,255);
     square.render();
-    square.deaths();
+    square.collisions();
     obstacle.render();
     collisions();
     if(hit)
@@ -125,14 +125,14 @@ void collisions()
               if(square.firstFloor)
               {
                 square.pos.x = 0;
-                square.deaths ++;
+                square.collisions ++;
                 
               }
               
               else
               {
                 square.pos.x = width;
-                square.deaths ++;
+                square.collisions ++;
               }
              }
         }

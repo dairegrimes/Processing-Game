@@ -70,7 +70,7 @@ class StartUp
       textAlign(CENTER);
       text("GAME OVER",300,100);
 
-      text("Your deaths: " + square.deaths,300,350);
+      text("Your collisions: " + square.collisions,300,350);
       
       text("Enter your name: " + lastInput,200,300);
       //text("Enter your name: " + currentInput,200,300);

@@ -56,7 +56,7 @@ class MainSquare extends GameObject
         speed *= (-1);
         firstFloor =! firstFloor;
         stage ++;
-        //check();
+        check();
       }    
 
     // CODE FOR JUMPING
@@ -145,11 +145,11 @@ class MainSquare extends GameObject
   }// render()
   
   
-  void deaths()
+  void collisions()
   {
     textAlign(CENTER);
     textSize(16);
-    text("Deaths:  " + deaths,60,30);
+    text("Collisions:  " + collisions,60,30);
     
     textSize(16);
     text(stage + " / 10",250,30);
