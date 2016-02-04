@@ -16,7 +16,8 @@ void setup()
    }
 
 }
-
+String lastInput = new String();
+String currentInput = new String();
 float x;
 float y;
 boolean option1;
@@ -55,7 +56,7 @@ void draw()
     {
       collide();
       
-      if(frameCount % 100 == 0)
+      if(frameCount % 30 == 0)
       {
         hit =! hit;
       }
@@ -89,7 +90,13 @@ void collisions()
         
             if(distance <= square.squareSize)
             {
-              //hit =! hit;
+              
+              for (int j = 0; j < parts.length; j++)
+               {
+                 parts [j].x = square.pos.x;
+                 parts [j].y = square.pos.y;
+               }
+              hit =! hit;
               if(square.firstFloor)
               {
                 square.pos.x = 0;

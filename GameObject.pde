@@ -10,7 +10,7 @@ abstract class GameObject
    int speed = 3;
    int deaths = 0;
    int level = (int)random(1,6);;
-   int stage = 0;
+   int stage = 1;
    
    GameObject()
    {
