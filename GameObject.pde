@@ -31,7 +31,4 @@ abstract class GameObject
   }
     
     abstract void render();
-    //abstract void go();
-    //abstract void jump();
-    //abstract void deaths();
 }

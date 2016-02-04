@@ -4,13 +4,11 @@ class MainSquare extends GameObject
   boolean spin = false;
   float spin2;
   float spinSpeed;
-  boolean check;
   MainSquare()
   {
     super(0, height / 3);
     spin2 = 0;
     spinSpeed = 0.1;
-    check = false;
   }
   
   void render()
@@ -149,8 +147,9 @@ class MainSquare extends GameObject
   
   void deaths()
   {
+    textAlign(CENTER);
     textSize(16);
-    text("Deaths:  " + deaths,30,30);
+    text("Deaths:  " + deaths,60,30);
     
     textSize(16);
     text(stage + " / 10",250,30);
@@ -168,20 +167,12 @@ class MainSquare extends GameObject
       array[1] = level;
       if(array[0] != array[1])
       {
-        check =! check;
+        level = array[1];
       }
     }
     while(array[0] == array[1]);
     
-      
-      check =! check;
     
-    
-    if(check)
-    {
-      level = array[1];
-      check =! check;
-    }
     
   } // end check()
 
