@@ -36,6 +36,7 @@ Explode [] parts = new Explode [50];
 
 void draw()
 { 
+  println(square.level);
   if(square.stage == 11)
   {
     option1 = false;
@@ -85,6 +86,7 @@ void draw()
   
   if(start)
  {
+    countdown.number = 5;
     startup.render();
     startup.option1();
     startup.option2();

@@ -17,10 +17,9 @@ class StartUp
     line(0,square.floor2 + square.squareSize,width,square.floor2 + square.squareSize);
     textSize(64);
     fill(255,0,0);
-    text("SQUARE JUMP",300,150);
     textAlign(CENTER);
+    text("SQUARE JUMP",300,150);
     fill(0,0,255);
-    
     textSize(40);
     fill(0,0,255);
     text("Start",200,300);
@@ -68,6 +67,7 @@ class StartUp
       line(0,square.floor2 + square.squareSize,width,square.floor2 + square.squareSize);
       textSize(32);
       fill(255,0,0);
+      textAlign(CENTER);
       text("GAME OVER",300,100);
 
       text("Your deaths: " + square.deaths,300,350);
@@ -77,7 +77,7 @@ class StartUp
       
       text("Play Again",200,500);
       text("Exit",400,500);
-      textAlign(CENTER);
+      
       fill(0,0,255);
       
       if(mouseX >= 160 && mouseX <= 240 && mouseY >= 470 && mouseY <= 500)

@@ -4,16 +4,18 @@ class MainSquare extends GameObject
   boolean spin = false;
   float spin2;
   float spinSpeed;
+  boolean check;
   MainSquare()
   {
     super(0, height / 3);
     spin2 = 0;
     spinSpeed = 0.1;
+    check = false;
   }
   
   void render()
   {
-  
+    fill(0);
     line(0,floor1 + squareSize,width,floor1 + squareSize);
     line(0,floor2 + squareSize,width,floor2 + squareSize);
 
@@ -36,7 +38,7 @@ class MainSquare extends GameObject
          }
       }
      
-     fill(0);
+     
      
      
      pos.x += speed;
@@ -52,11 +54,11 @@ class MainSquare extends GameObject
       // SECOND FLOOR
       if(pos.x <= 0)
       {
-        level = (int)random(1,6);
         pos.y = floor1;
         speed *= (-1);
         firstFloor =! firstFloor;
         stage ++;
+        check();
       }    
 
     // CODE FOR JUMPING
@@ -154,5 +156,33 @@ class MainSquare extends GameObject
     text(stage + " / 10",250,30);
    
   } // deaths()
+  
+  void check() // makes sure you don't get the same level twice
+  {
+    array[0] = level;
+    array[1] = (int)random(1,6);
+    
+    do
+    {
+      level = (int)random(1,6);
+      array[1] = level;
+      if(array[0] != array[1])
+      {
+        check =! check;
+      }
+    }
+    while(array[0] == array[1]);
+    
+      
+      check =! check;
+    
+    
+    if(check)
+    {
+      level = array[1];
+      check =! check;
+    }
+    
+  } // end check()
 
 }
