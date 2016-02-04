@@ -10,12 +10,14 @@ void setup()
   count = false;   
   hit = false;
   end = false;
+
     for (int i = 0; i < parts.length; i++)
    {
      parts [i] = new Explode ();
    }
 
 }
+
 String lastInput = new String();
 String currentInput = new String();
 float x;
@@ -25,6 +27,7 @@ boolean start;
 boolean count;
 boolean hit;
 boolean end;
+
 MainSquare square;
 StartUp startup;
 Countdown countdown;
@@ -56,12 +59,27 @@ void draw()
     {
       collide();
       
-      if(frameCount % 30 == 0)
+      if(square.firstFloor)
       {
-        hit =! hit;
+        if(square.pos.x >= 100)
+        {
+           hit = false;
+        }
       }
       
+      else
+      {
+        if(square.pos.x <= 500)
+        {
+           hit = false;
+        }
+      }
+      
+      
+      
     } 
+    
+   
         
   }
   
@@ -91,16 +109,22 @@ void collisions()
             if(distance <= square.squareSize)
             {
               
-              for (int j = 0; j < parts.length; j++)
+             for (int j = 0; j < parts.length; j++)
                {
                  parts [j].x = square.pos.x;
                  parts [j].y = square.pos.y;
+                 
                }
-              hit =! hit;
+               
+                hit = true;
+               
+              
+
               if(square.firstFloor)
               {
                 square.pos.x = 0;
                 square.deaths ++;
+                
               }
               
               else

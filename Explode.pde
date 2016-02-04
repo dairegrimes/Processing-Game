@@ -4,26 +4,23 @@ class Explode
   float x;
   float y;
 
-  float velX; // speed or velocity
-  float velY;
+  float ex1; 
+  float ex2;
 
 
   Explode () 
   {
-    //x and y position to be in middle of screen
-
-    
-    x = width/2;
-    y = height/2;
+    x = square.pos.x;
+    y = square.pos.y;
      
-    velX = random (-10,10);
-    velY = random (-10,10);
+    ex1 = random (-10,10);
+    ex2 = random (-10,10);
   }
 
   void update () 
   {
-    x+=velX;
-    y+=velY;
+    x += ex1;
+    y += ex2;
      
 
     ellipse (x,y,3,3);
