@@ -118,16 +118,17 @@ void render()
           }
       
           
-          obstacles[4].x = y;
+         
+      
+         if(!square.firstFloor)
+         {
+            
+            obstacles[4].x = y;
           obstacles[4].y = floor2;
           rect(obstacles[4].x,obstacles[4].y,squareSize,squareSize);
           obstacles[5].x = z;
           obstacles[5].y = floor2;
           rect(obstacles[5].x,obstacles[5].y,squareSize,squareSize);
-      
-         if(!square.firstFloor)
-         {
-            
             y += 7;
             
             if(square.pos.x == 597)

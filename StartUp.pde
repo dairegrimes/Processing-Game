@@ -25,9 +25,6 @@ class StartUp
     text("Start",200,300);
     text("Exit",400,300);
     fill(0,0,255);
-    
-   
-    
   } // end render()
   
   void option1()
@@ -39,7 +36,6 @@ class StartUp
         start  = false;
         count = true;
       }
-      
     }
 
   } // end option1()
@@ -54,14 +50,11 @@ class StartUp
         exit();
       }
     }
-     
   } // end option2()
   
   
   void end()
   {
-     
-    
       background(177,255,255);
       line(0,square.floor1 + square.squareSize,width,square.floor1 + square.squareSize);
       line(0,square.floor2 + square.squareSize,width,square.floor2 + square.squareSize);
@@ -70,10 +63,7 @@ class StartUp
       textAlign(CENTER);
       text("GAME OVER",300,100);
 
-      text("Your collisions: " + square.collisions,300,350);
-      
-      text("Enter your name: " + lastInput,200,300);
-      //text("Enter your name: " + currentInput,200,300);
+      text("Your collisions: " + square.collisions,300,320);
       
       text("Play Again",200,500);
       text("Exit",400,500);
@@ -86,11 +76,8 @@ class StartUp
         {
           start  = true;
           end = false;
-          
         }
-      
       }
-    
     
       if(mouseX >= 270 && mouseX <= 400 && mouseY >= 470 && mouseY <= 500)
       {
@@ -98,32 +85,6 @@ class StartUp
         {
           exit();
         }
-    
       }
-      
-        
-    
   } //  end end()
-  
-  void keyPressed()
-{
-if(key == ENTER)
-{
-  lastInput = currentInput = currentInput + key;
-  currentInput = "";
-}
-
-else if(key == BACKSPACE && currentInput.length() > 0)
-{
-  currentInput = currentInput.substring(0, currentInput.length() - 1);
-}
-
-else
-{
-  currentInput = currentInput + key;
-}
-
-}
-
-
 }

@@ -11,11 +11,10 @@ void setup()
   hit = false;
   end = false;
 
-    for (int i = 0; i < parts.length; i++)
-   {
+  for (int i = 0; i < parts.length; i++)
+  {
      parts [i] = new Explode ();
-   }
-
+  }
 }
 
 String lastInput = new String();
@@ -75,18 +74,13 @@ void draw()
            hit = false;
         }
       }
-      
-      
-      
     } 
-    
-   
-        
   }
   
   if(start)
  {
     countdown.number = 5;
+    square.collisions = 0;
     startup.render();
     startup.option1();
     startup.option2();
@@ -96,7 +90,6 @@ void draw()
   {
     countdown.render();
   }
-
 }
 
 
@@ -120,13 +113,10 @@ void collisions()
                
                 hit = true;
                
-              
-
               if(square.firstFloor)
               {
                 square.pos.x = 0;
                 square.collisions ++;
-                
               }
               
               else
@@ -140,8 +130,8 @@ void collisions()
 
   void collide()
 {
-        for (int j = 0; j < parts.length; j++) 
-       {
-        parts [j].update();
-      }
+  for (int j = 0; j < parts.length; j++) 
+  {
+    parts [j].update();
+  }
 } // end collide()
