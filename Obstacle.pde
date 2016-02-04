@@ -21,7 +21,7 @@ class Obstacle extends GameObject
    x = 700;
    y = - 100;
    z = - 1000;
-   b = 100;
+   b = 150;
    c = 500;
    h = 150;
    d = 500;
@@ -150,8 +150,6 @@ void render()
     
        case 4:
     {     
-      
-      
           obstacles[0].x = 450;
           obstacles[0].y = b;
           rect(obstacles[0].x,obstacles[0].y,squareSize,squareSize);
@@ -159,13 +157,13 @@ void render()
           
           if(square.firstFloor)
           {
-            if(square.pos.x <= 350)
+            if(square.pos.x <= 400)
             {
               b = 100;
             }
           }
           
-          if(x >= floor1)
+          if(b >= floor1)
           {
             b = floor1;
           }

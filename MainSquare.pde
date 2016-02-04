@@ -56,7 +56,7 @@ class MainSquare extends GameObject
         speed *= (-1);
         firstFloor =! firstFloor;
         stage ++;
-        check();
+        //check();
       }    
 
     // CODE FOR JUMPING

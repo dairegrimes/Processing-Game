@@ -10,13 +10,12 @@ abstract class GameObject
    int speed = 3;
    int deaths = 0;
    int[] array = new int [2];
-   int level = (int)random(1,6);
-   int stage = 10;
+   int level = 4;//(int)random(1,6);
+   int stage = 1;
    
    GameObject()
    {
      this (0, width / 3);
-     
    }
    
     GameObject(float x, float y)

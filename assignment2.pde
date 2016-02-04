@@ -138,7 +138,7 @@ void collisions()
         }
 } // end collisions()
 
-void collide()
+  void collide()
 {
         for (int j = 0; j < parts.length; j++) 
        {
