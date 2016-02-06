@@ -11,7 +11,7 @@ abstract class GameObject
    int collisions = 0;
    int[] array = new int [2];
    int level = (int)random(1,6);
-   int stage = 1;
+   int stage = 10;
    
    GameObject()
    {

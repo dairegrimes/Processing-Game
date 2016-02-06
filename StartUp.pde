@@ -1,8 +1,12 @@
 class StartUp
 {
   int x,y;
+
   String lastInput = new String();
   String currentInput = new String();
+  int[] numbers = new int[11];
+
+  int temp;
 
   StartUp()
   {
@@ -55,6 +59,27 @@ class StartUp
   
   void end()
   {
+       data.get(10).scores = square.collisions;
+       for(int i = 0; i < 11; i ++)
+       {
+           numbers[i] = data.get(i).scores;
+       }
+       
+          Arrays.sort(numbers);
+       
+      for(int i = 0; i < 11; i ++)
+       {
+         println(numbers[i] + " " + i);
+       }
+       
+       PrintWriter output = createWriter ("scores.csv");
+       for(int i = 0; i < 11; i ++)
+       {
+         output.println(numbers[i]);
+       }
+       output.flush();
+       output.close();
+       
       background(177,255,255);
       line(0,square.floor1 + square.squareSize,width,square.floor1 + square.squareSize);
       line(0,square.floor2 + square.squareSize,width,square.floor2 + square.squareSize);
@@ -86,5 +111,8 @@ class StartUp
           exit();
         }
       }
+      
+
+    
   } //  end end()
 }

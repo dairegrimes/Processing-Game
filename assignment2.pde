@@ -4,17 +4,20 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
+
+import java.util.Arrays;
 Minim minim;
 void setup()
 {
   size(600,600);
+  loadData();
   minim = new Minim(this);
   square = new MainSquare();
   startup = new StartUp();
   countdown = new Countdown();
   obstacle = new Obstacle();
-  loadData();
-  println(data.get(9).scores);
+  
+
   option1 = true;
   start = false;
   count = false;   
@@ -38,6 +41,7 @@ boolean count;
 boolean hit;
 boolean end;
 
+int n, c, d, swap;
 MainSquare square;
 StartUp startup;
 Countdown countdown;
@@ -56,6 +60,9 @@ void draw()
   if(end)
   {
     startup.end();
+    
+  
+       
   }
   
   
@@ -119,6 +126,8 @@ void collisions()
                {
                  parts [j].x = square.pos.x;
                  parts [j].y = square.pos.y;
+                 parts [j].ex1 = random (-10,10);
+                 parts [j].ex2 = random (-10,10);
                  
                }
                
