@@ -59,35 +59,18 @@ class StartUp
   
   void end()
   {
-       data.get(10).scores = square.collisions;
-       for(int i = 0; i < 11; i ++)
-       {
-           numbers[i] = data.get(i).scores;
-       }
-       
-          Arrays.sort(numbers);
-       
-      for(int i = 0; i < 11; i ++)
-       {
-         println(numbers[i] + " " + i);
-       }
-       
-       PrintWriter output = createWriter ("scores.csv");
-       for(int i = 0; i < 11; i ++)
-       {
-         output.println(numbers[i]);
-       }
-       output.flush();
-       output.close();
-       
       background(177,255,255);
-      line(0,square.floor1 + square.squareSize,width,square.floor1 + square.squareSize);
-      line(0,square.floor2 + square.squareSize,width,square.floor2 + square.squareSize);
       textSize(32);
       fill(255,0,0);
       textAlign(CENTER);
       text("GAME OVER",300,100);
-
+      textSize(18);
+      for(int i = 0; i < 11; i ++)
+      {
+        text(numbers[i],100,220 + ((i + 1) * 20)); 
+      }
+      text("High Scores",100,200); 
+      textSize(25);
       text("Your collisions: " + square.collisions,300,320);
       
       text("Play Again",200,500);
@@ -115,4 +98,28 @@ class StartUp
 
     
   } //  end end()
+  
+  void data() // inputs and outputs the scores to a text file
+  {      
+        
+       // puts the users score into 11th position the sorts it
+       // then displays the top ten
+       data.get(10).scores = square.collisions; 
+        
+       for(int i = 0; i < data.size(); i ++)
+       {
+           numbers[i] = data.get(i).scores;
+       }
+       
+       Arrays.sort(numbers); //  sorts the numbers for a new high score
+       
+       
+       PrintWriter output = createWriter ("scores.csv"); //  outsputs the new scores to a file
+       for(int i = 0; i < data.size(); i ++)
+       {
+         output.println(numbers[i]);
+       }
+       output.flush();
+       output.close();
+  }
 }

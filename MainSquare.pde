@@ -11,7 +11,6 @@ class MainSquare extends GameObject
     super(0, height / 3);
     spin2 = 0;
     spinSpeed = 0.1;
-
     audio = minim.loadFile("jump.mp3");
   }
   

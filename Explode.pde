@@ -21,8 +21,6 @@ class Explode
   {
     x += ex1;
     y += ex2;
-     
-
     ellipse (x,y,3,3);
   }
 }

@@ -18,8 +18,8 @@ void setup()
   obstacle = new Obstacle();
   
 
-  option1 = true;
-  start = false;
+  option1 = false;
+  start = true;
   count = false;   
   hit = false;
   end = false;
@@ -41,7 +41,6 @@ boolean count;
 boolean hit;
 boolean end;
 
-int n, c, d, swap;
 MainSquare square;
 StartUp startup;
 Countdown countdown;
@@ -59,10 +58,8 @@ void draw()
   
   if(end)
   {
+    startup.data();
     startup.end();
-    
-  
-       
   }
   
   
@@ -148,7 +145,7 @@ void collisions()
         }
 } // end collisions()
 
-  void collide()
+  void collide() // explosions when you collide
 {
   for (int j = 0; j < parts.length; j++) 
   {
@@ -165,4 +162,4 @@ void loadData()
     Score score = new Score(line);
     data.add(score);
   }
-}
+} //  end loadData()
