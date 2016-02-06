@@ -4,11 +4,15 @@ class MainSquare extends GameObject
   boolean spin = false;
   float spin2;
   float spinSpeed;
+  AudioPlayer audio;
+  
   MainSquare()
   {
     super(0, height / 3);
     spin2 = 0;
     spinSpeed = 0.1;
+
+    audio = minim.loadFile("jump.mp3");
   }
   
   void render()
@@ -80,7 +84,8 @@ class MainSquare extends GameObject
             {
               if(spin2 == 0)
               {
-                file.play();
+                audio.rewind();
+                audio.play();
                 spin =! spin;
                 jumping =! jumping;
               }
@@ -123,7 +128,8 @@ class MainSquare extends GameObject
             {
               if(spin2 == 0)
               {
-                file.play();
+                audio.rewind();
+                audio.play();
                 spin =! spin;
                 jumping =! jumping;
               }
@@ -158,7 +164,7 @@ class MainSquare extends GameObject
    
   } // deaths()
   
-  void check() // makes sure you don't get the same level twice
+  void check() // makes sure you don't get the same level twice in a row
   {
     array[0] = level;
     array[1] = (int)random(1,6);

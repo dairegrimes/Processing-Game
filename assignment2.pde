@@ -1,11 +1,20 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+Minim minim;
 void setup()
 {
   size(600,600);
+  minim = new Minim(this);
   square = new MainSquare();
   startup = new StartUp();
   countdown = new Countdown();
   obstacle = new Obstacle();
-  file = new SoundFile(this, "jump.mp3");
+  loadData();
+  println(data.get(9).scores);
   option1 = true;
   start = false;
   count = false;   
@@ -17,10 +26,8 @@ void setup()
      parts [i] = new Explode ();
   }
 }
-import processing.sound.*;
-SoundFile file;
 
-
+ArrayList<Score> data = new ArrayList<Score>();
 String lastInput = new String();
 String currentInput = new String();
 float x;
@@ -139,3 +146,14 @@ void collisions()
     parts [j].update();
   }
 } // end collide()
+
+
+void loadData()
+{
+  String[] lines = loadStrings("scores.csv");
+  for(String line: lines)
+  {
+    Score score = new Score(line);
+    data.add(score);
+  }
+}
