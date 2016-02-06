@@ -5,6 +5,7 @@ void setup()
   startup = new StartUp();
   countdown = new Countdown();
   obstacle = new Obstacle();
+  file = new SoundFile(this, "jump.mp3");
   option1 = true;
   start = false;
   count = false;   
@@ -16,6 +17,9 @@ void setup()
      parts [i] = new Explode ();
   }
 }
+import processing.sound.*;
+SoundFile file;
+
 
 String lastInput = new String();
 String currentInput = new String();
@@ -35,7 +39,7 @@ Explode [] parts = new Explode [50];
 
 void draw()
 { 
-  println(square.level);
+
   if(square.stage == 11)
   {
     option1 = false;

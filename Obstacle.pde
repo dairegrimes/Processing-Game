@@ -117,18 +117,18 @@ void render()
             g = 700;
           }
       
-          
-         
-      
-         if(!square.firstFloor)
-         {
-            
-            obstacles[4].x = y;
+          obstacles[4].x = y;
           obstacles[4].y = floor2;
           rect(obstacles[4].x,obstacles[4].y,squareSize,squareSize);
           obstacles[5].x = z;
           obstacles[5].y = floor2;
           rect(obstacles[5].x,obstacles[5].y,squareSize,squareSize);
+         
+      
+         if(!square.firstFloor)
+         {
+            
+          
             y += 7;
             
             if(square.pos.x == 597)
@@ -262,14 +262,14 @@ void render()
           }
          
           
-          obstacles[2].x = 300;
-          obstacles[2].y = floor1;
-          rect(obstacles[2].x,obstacles[2].y,squareSize,squareSize);
-          
-          
-          obstacles[1].x = 400;
-          obstacles[1].y = f;
+          obstacles[1].x = 300;
+          obstacles[1].y = floor1;
           rect(obstacles[1].x,obstacles[1].y,squareSize,squareSize);
+          
+          
+          obstacles[2].x = 400;
+          obstacles[2].y = f;
+          rect(obstacles[2].x,obstacles[2].y,squareSize,squareSize);
           f -= fspeed;
           if(f <= 100)
           {
@@ -291,12 +291,15 @@ void render()
           obstacles[4].x = 400;
           obstacles[4].y = floor2;
           rect(obstacles[4].x,obstacles[4].y,squareSize,squareSize);
+          
+         
         
         if(!square.firstFloor)
         {
           obstacles[5].x = a;
           obstacles[5].y = floor2;
           rect(obstacles[5].x,obstacles[5].y,squareSize,squareSize);
+         
           a += 7;
             
             if(square.pos.x == 597)

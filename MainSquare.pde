@@ -80,6 +80,7 @@ class MainSquare extends GameObject
             {
               if(spin2 == 0)
               {
+                file.play();
                 spin =! spin;
                 jumping =! jumping;
               }
@@ -122,6 +123,7 @@ class MainSquare extends GameObject
             {
               if(spin2 == 0)
               {
+                file.play();
                 spin =! spin;
                 jumping =! jumping;
               }
