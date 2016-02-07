@@ -1,17 +1,11 @@
 class StartUp
 {
-  int x,y;
   int i;
-  String lastInput = new String();
-  String currentInput = new String();
   int[] numbers = new int[11];
-
-  int temp;
 
   StartUp()
   {
-    x = 200;
-    y = 400;
+    
   }
   
   void render()
