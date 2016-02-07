@@ -10,14 +10,12 @@ Minim minim;
 void setup()
 {
   size(600,600);
-  loadData();
   minim = new Minim(this);
   square = new MainSquare();
   startup = new StartUp();
   countdown = new Countdown();
   obstacle = new Obstacle();
-  
-
+  loadData();
   option1 = true;
   start = false;
   count = false;   
@@ -52,18 +50,16 @@ void draw()
 
   if(square.stage == 11)
   {
+    
     option1 = false;
     end = true;
   }
   
   if(end)
-  {
-    if(data.get(10).scores > square.collisions)
-    {
-      startup.data();
-    }
+  { 
     
-    startup.end();
+     startup.data();
+     startup.end();
   }
   
   

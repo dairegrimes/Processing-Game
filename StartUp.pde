@@ -1,7 +1,7 @@
 class StartUp
 {
   int x,y;
-
+  int i;
   String lastInput = new String();
   String currentInput = new String();
   int[] numbers = new int[11];
@@ -24,7 +24,7 @@ class StartUp
     textAlign(CENTER);
     text("SQUARE JUMP",300,150);
     fill(0,0,255);
-    textSize(40);
+    textSize(18);
     fill(0,0,255);
     text("Start",200,300);
     text("Exit",400,300);
@@ -64,15 +64,19 @@ class StartUp
       fill(255,0,0);
       textAlign(CENTER);
       text("GAME OVER",300,100);
-      textSize(18);
-      for(int i = 0; i < numbers.length; i ++)
-      {
-        text(numbers[i],100,220 + ((i + 1) * 20)); 
-      }
-      text("High Scores",100,200); 
       textSize(25);
       text("Your collisions: " + square.collisions,300,320);
-      
+      textSize(18);
+      for(int i = 0; i < data.size() + 1; i ++)
+      {
+        text(numbers[i],100,220 + ((i + 1) * 20)); 
+        if(i == numbers.length - 1)
+        {
+          break;
+        }
+      }
+      text("High Scores",100,200); 
+      textSize(40);
       text("Play Again",200,500);
       text("Exit",400,500);
       
@@ -85,7 +89,7 @@ class StartUp
           start  = true;
           end = false;
         }
-      }
+      } 
     
       if(mouseX >= 270 && mouseX <= 400 && mouseY >= 470 && mouseY <= 500)
       {
@@ -99,27 +103,62 @@ class StartUp
     
   } //  end end()
   
- void data() // inputs and outputs the scores to a text file
-  {      
+   void data() // inputs and outputs the scores to a text file
+  {     
+        PrintWriter output = createWriter ("scores.csv"); //  outsputs the new scores to a file
+
         
-       // puts the users score into 11th position the sorts it
-       // then displays the top ten
-       data.get(10).scores = square.collisions; 
+        if(data.size() < 1)
+        {
+           output.println(square.collisions);
+           output.flush();
+           output.close();
+           
+           numbers[0] = square.collisions;
+          
+          
+        } //  end if()
         
-       for(int i = 0; i < data.size(); i ++)
-       {
-           numbers[i] = data.get(i).scores;
-       }
-       
-       Arrays.sort(numbers); //  sorts the numbers for a new high score
-       
-       
-       PrintWriter output = createWriter ("scores.csv"); //  outsputs the new scores to a file
-       for(int i = 0; i < data.size(); i ++)
-       {
-         output.println(numbers[i]);
-       }
-       output.flush();
-       output.close();
+        else
+        {
+          for(int j = 0; j < data.size(); j ++ )
+          {
+            numbers[j] = data.get(j).scores;
+          }
+          
+          i = data.size();
+          
+          if(data.size() < numbers.length - 1)
+          {
+            numbers[i] = square.collisions;
+          }
+          
+          else
+          {
+            if(numbers[10] > square.collisions)
+            {
+              numbers[10] = square.collisions;
+            }
+          }
+          
+          Arrays.sort(numbers); //  sorts the numbers for a new high score
+          
+
+          for(int i = 0; i < data.size() + 1; i ++)
+          {
+             output.println(numbers[i]);
+             if(i == numbers.length - 1)
+             {
+                break;
+             }
+          }
+           output.flush();
+           output.close();
+
+        }
+        
+        
+        
+        
   }
 }
