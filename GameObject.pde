@@ -11,9 +11,12 @@ abstract class GameObject
    int squareSize = 20;
    int speed = 3;
    PVector pos;
-   
-   
    int stage = 1;
+   /*
+     There are 5 different level and 
+     you randomly play them 10 times
+   */
+   
    
    GameObject()
    {

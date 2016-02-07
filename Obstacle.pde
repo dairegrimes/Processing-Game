@@ -36,12 +36,11 @@ class Obstacle extends GameObject
  
   
   
-void render()
+void render() // positions for all 5 levels
 {
   switch(square.level)
   {
-    
-       case 1:
+      case 1:
     {
         for(int i = 0; i < level1.length; i ++ )
         {

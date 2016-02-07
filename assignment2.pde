@@ -113,7 +113,6 @@ void collisions() //  checking for collisions
   float distance = 0.0f;
   for(int i = 0; i < obstacle.obstacles.length; i ++)
        {
-         
          distance = PVector.dist(square.pos, obstacle.obstacles[i]);
         
             if(distance <= square.squareSize)
@@ -125,7 +124,6 @@ void collisions() //  checking for collisions
                  parts [j].y = square.pos.y;
                  parts [j].ex1 = random (-10,10);
                  parts [j].ex2 = random (-10,10);
-                 
                }
                
                 hit = true; //  makes the explosions true

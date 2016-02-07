@@ -1,3 +1,5 @@
+// The coundown before the game starts
+
 class Countdown
 {
   int number;

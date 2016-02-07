@@ -1,5 +1,8 @@
 // code for collisions
-
+/*
+  50 cirlces are created and random 
+  directions get put into them
+*/
 class Explode 
 {
   

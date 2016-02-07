@@ -26,7 +26,7 @@ class StartUp
     fill(0,0,255);
   } // end render()
   
-  void option1()
+  void option1() // code for starting the game
   {
     if(mouseX >= 160 && mouseX <= 240 && mouseY >= 270 && mouseY <= 300)
     {
@@ -40,7 +40,7 @@ class StartUp
   } // end option1()
   
   
-  void option2()
+  void option2() // code for exiting
   {
     if(mouseX >= 270 && mouseX <= 400 && mouseY >= 270 && mouseY <= 300)
     {
@@ -52,7 +52,7 @@ class StartUp
   } // end option2()
   
   
-  void end()
+  void end() // code for when you finish playing
   {
       background(177,255,255);
       textSize(32);
@@ -151,9 +151,5 @@ class StartUp
            output.close();
 
         }
-        
-        
-        
-        
-  }
+  } // end data()
 }

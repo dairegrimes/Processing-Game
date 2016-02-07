@@ -1,3 +1,5 @@
+// class for reading in the high scores from the file
+
 class Score
 {
   int scores;
