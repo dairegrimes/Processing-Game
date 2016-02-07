@@ -65,7 +65,7 @@ class StartUp
       textAlign(CENTER);
       text("GAME OVER",300,100);
       textSize(18);
-      for(int i = 0; i < 11; i ++)
+      for(int i = 0; i < numbers.length; i ++)
       {
         text(numbers[i],100,220 + ((i + 1) * 20)); 
       }
@@ -99,7 +99,7 @@ class StartUp
     
   } //  end end()
   
-  void data() // inputs and outputs the scores to a text file
+ void data() // inputs and outputs the scores to a text file
   {      
         
        // puts the users score into 11th position the sorts it

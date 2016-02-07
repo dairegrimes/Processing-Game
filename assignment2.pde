@@ -4,9 +4,9 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
-
 import java.util.Arrays;
 Minim minim;
+
 void setup()
 {
   size(600,600);
@@ -18,8 +18,8 @@ void setup()
   obstacle = new Obstacle();
   
 
-  option1 = false;
-  start = true;
+  option1 = true;
+  start = false;
   count = false;   
   hit = false;
   end = false;
@@ -58,7 +58,11 @@ void draw()
   
   if(end)
   {
-    startup.data();
+    if(data.get(10).scores > square.collisions)
+    {
+      startup.data();
+    }
+    
     startup.end();
   }
   

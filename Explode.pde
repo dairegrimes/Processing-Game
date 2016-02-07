@@ -1,6 +1,8 @@
+// code for collisions
+
 class Explode 
 {
-
+  
   float x;
   float y;
 
