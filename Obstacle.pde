@@ -1,5 +1,6 @@
 class Obstacle extends GameObject
 {
+  // the variables for the moving obstacles
   float x;
   float y;
   float z;
@@ -13,7 +14,7 @@ class Obstacle extends GameObject
   float h;
   float espeed;
   float fspeed;
-  int[] level1 = { 150, 300, 450 };
+  int[] level1 = { 150, 300, 450, 150, 300, 450 };
   int[] level2 = { 150, 300, 450 };
 
  Obstacle()
@@ -37,8 +38,6 @@ class Obstacle extends GameObject
   
 void render()
 {
- 
-  
   switch(square.level)
   {
     
@@ -48,17 +47,14 @@ void render()
         {
           obstacles[i].x = level1[i];
           obstacles[i].y = floor1;
+          if(i > 2)
+          {
+            obstacles[i].y = floor2;
+          }
           
           rect(obstacles[i].x,obstacles[i].y,squareSize,squareSize);
         }
-        
-        for(int i = 0; i < level1.length; i ++ )
-        {
-          obstacles[i + 3].x = level1[i];
-          obstacles[i + 3].y = floor2;
-          
-          rect(obstacles[i + 3].x,obstacles[i + 3].y,squareSize,squareSize);
-        }
+
  
     }
     break;
@@ -198,6 +194,14 @@ void render()
           obstacles[3].x = 150;
           obstacles[3].y = d;
           rect(obstacles[3].x,obstacles[3].y,squareSize,squareSize);
+          
+          obstacles[4].x = 300;
+          obstacles[4].y = floor1;
+          rect(obstacles[4].x,obstacles[4].y,squareSize,squareSize);
+          
+          obstacles[5].x = 300;
+          obstacles[5].y = floor2;
+          rect(obstacles[5].x,obstacles[5].y,squareSize,squareSize);
           if(!square.firstFloor)
          { 
           
@@ -230,13 +234,7 @@ void render()
           
          }
          
-          obstacles[4].x = 300;
-          obstacles[4].y = floor1;
-          rect(obstacles[4].x,obstacles[4].y,squareSize,squareSize);
           
-          obstacles[5].x = 300;
-          obstacles[5].y = floor2;
-          rect(obstacles[5].x,obstacles[5].y,squareSize,squareSize);
          
     }
     break;

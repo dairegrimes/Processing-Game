@@ -16,23 +16,21 @@ void setup()
   countdown = new Countdown();
   obstacle = new Obstacle();
   loadData();
-  option1 = true;
-  start = false;
+  option1 = false;
+  start = true;
   count = false;   
   hit = false;
   end = false;
 
   for (int i = 0; i < parts.length; i++)
   {
-     parts [i] = new Explode ();
+     parts [i] = new Explode (); 
   }
 }
 
 ArrayList<Score> data = new ArrayList<Score>();
 String lastInput = new String();
 String currentInput = new String();
-float x;
-float y;
 boolean option1;
 boolean start;
 boolean count;
@@ -44,6 +42,8 @@ StartUp startup;
 Countdown countdown;
 Obstacle obstacle;
 Explode [] parts = new Explode [50];
+
+
 
 void draw()
 { 
@@ -108,7 +108,7 @@ void draw()
 }
 
 
-void collisions()
+void collisions() //  checking for collisions
 {
   float distance = 0.0f;
   for(int i = 0; i < obstacle.obstacles.length; i ++)
@@ -128,7 +128,7 @@ void collisions()
                  
                }
                
-                hit = true;
+                hit = true; //  makes the explosions true
                
               if(square.firstFloor)
               {
@@ -154,7 +154,7 @@ void collisions()
 } // end collide()
 
 
-void loadData()
+void loadData() //  loads in the data
 {
   String[] lines = loadStrings("scores.csv");
   for(String line: lines)

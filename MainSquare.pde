@@ -28,7 +28,7 @@ class MainSquare extends GameObject
       popMatrix();
 
   
-      if(spin)
+      if(spin) //  code for the square to spin 360 degrees
       {
          spin2 += spinSpeed;
      
@@ -38,9 +38,6 @@ class MainSquare extends GameObject
              spin =! spin;
          }
       }
-     
-     
-     
      
      pos.x += speed;
     
@@ -108,7 +105,7 @@ class MainSquare extends GameObject
       }
      
      
-     // SECOND LEVEL
+     // SECOND FLOOR
       else
     {
         if(jumping)
@@ -152,7 +149,7 @@ class MainSquare extends GameObject
   }// render()
   
   
-  void collisions()
+  void collisions() //  prints collisions and what stage your are on
   {
     textAlign(CENTER);
     textSize(16);

@@ -26,6 +26,7 @@ class StartUp
     fill(0,0,255);
     textSize(18);
     fill(0,0,255);
+    textSize(40);
     text("Start",200,300);
     text("Exit",400,300);
     fill(0,0,255);
@@ -76,7 +77,7 @@ class StartUp
         }
       }
       text("High Scores",100,200); 
-      textSize(40);
+      textSize(25);
       text("Play Again",200,500);
       text("Exit",400,500);
       
