@@ -25,14 +25,13 @@ abstract class GameObject
    
     GameObject(float x, float y)
   {
-    pos = new PVector(x, y);
+    pos = new PVector(x, y); // vector for the main square
 
-    for (int i = 0; i < obstacles.length; i++) 
+    for (int i = 0; i < obstacles.length; i++)  // vectors for the obstacles
      {
        obstacles[i] = new PVector();
      }
 
   }
-    
     abstract void render();
 }

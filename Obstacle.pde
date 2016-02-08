@@ -1,3 +1,5 @@
+// I was going to create an instance for each obstacle but I
+// could not get the moving ones to work
 class Obstacle extends GameObject
 {
   // the variables for the moving obstacles

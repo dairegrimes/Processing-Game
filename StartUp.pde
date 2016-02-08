@@ -26,7 +26,7 @@ class StartUp
     fill(0,0,255);
   } // end render()
   
-  void option1() // code for starting the game
+  void option1() // code for starting the game and countdown
   {
     if(mouseX >= 160 && mouseX <= 240 && mouseY >= 270 && mouseY <= 300)
     {
@@ -70,7 +70,7 @@ class StartUp
           break;
         }
       }
-      text("High Scores",100,200); 
+      text("Best Scores",100,200); 
       textSize(25);
       text("Play Again",200,500);
       text("Exit",400,500);
@@ -103,7 +103,7 @@ class StartUp
         PrintWriter output = createWriter ("scores.csv"); //  outsputs the new scores to a file
 
         
-        if(data.size() < 1)
+        if(data.size() < 1) // if there are no scores already
         {
            output.println(square.collisions);
            output.flush();
@@ -114,7 +114,7 @@ class StartUp
           
         } //  end if()
         
-        else
+        else // if there are scores
         {
           for(int j = 0; j < data.size(); j ++ )
           {
@@ -153,7 +153,6 @@ class StartUp
           }
            output.flush();
            output.close();
-
-        }
+          }
   } // end data()
 }
