@@ -119,6 +119,10 @@ class StartUp
           for(int j = 0; j < data.size(); j ++ )
           {
             numbers[j] = data.get(j).scores;
+            if(i == numbers.length - 1)
+            {
+              break;
+            }
           }
           
           i = data.size();
