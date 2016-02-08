@@ -16,8 +16,8 @@ void setup()
   countdown = new Countdown();
   obstacle = new Obstacle();
   loadData();
-  option1 = true;
-  start = false;
+  option1 = false;
+  start = true;
   count = false;   
   hit = false;
   end = false;

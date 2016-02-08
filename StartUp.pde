@@ -1,7 +1,7 @@
 class StartUp
 {
   int i;
-  int[] numbers = new int[11];
+  int[] numbers = new int[10];
 
   StartUp()
   {
@@ -134,9 +134,9 @@ class StartUp
           
           else
           {
-            if(numbers[10] > square.collisions)
+            if(numbers[9] > square.collisions)
             {
-              numbers[10] = square.collisions;
+              numbers[9] = square.collisions;
             }
           }
           
