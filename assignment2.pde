@@ -43,8 +43,6 @@ Countdown countdown;
 Obstacle obstacle;
 Explode [] parts = new Explode [50];
 
-
-
 void draw()
 { 
 
@@ -117,7 +115,7 @@ void collisions() //  checking for collisions
             if(distance <= square.squareSize)
             {
               
-             for (int j = 0; j < parts.length; j++)
+             for (int j = 0; j < parts.length; j++) // code for explosions
                {
                  parts [j].x = square.pos.x;
                  parts [j].y = square.pos.y;

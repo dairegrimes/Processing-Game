@@ -1,4 +1,4 @@
-// The coundown before the game starts
+// The countdown before the game starts
 
 class Countdown
 {

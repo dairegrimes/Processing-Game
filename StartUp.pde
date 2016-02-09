@@ -1,3 +1,5 @@
+// code for the startup menu
+// and for when the game is finished
 class StartUp
 {
   int i;
