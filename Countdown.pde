@@ -16,7 +16,7 @@ class Countdown
     textSize(32);
     fill(255,0,0);
     textAlign(CENTER);
-    text("Press enter to jump",300,100);
+    text("Press space to jump",300,100);
     text("over the obstacles!",300,500);
     text(number,300,300);
     if(frameCount % 60 == 0)
