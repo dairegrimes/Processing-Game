@@ -146,7 +146,7 @@ class MainSquare extends GameObject
        }
       }
      
-  }// render()
+  }// end render()
   
   
   void collisions() //  prints collisions and what stage your are on
@@ -175,9 +175,6 @@ class MainSquare extends GameObject
       }
     }
     while(array[0] == array[1]);
-    
-    
-    
-  } // end check()
+   } // end check()
 
 }

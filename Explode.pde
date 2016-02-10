@@ -5,7 +5,6 @@
 */
 class Explode 
 {
-  
   float x;
   float y;
 

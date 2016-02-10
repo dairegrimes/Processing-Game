@@ -4,7 +4,9 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
-import java.util.Arrays;
+// importing this library for the jumping sound
+import java.util.Arrays; // importing this for sorting
+
 Minim minim;
 
 void setup()
@@ -29,13 +31,11 @@ void setup()
 }
 
 ArrayList<Score> data = new ArrayList<Score>();
-String lastInput = new String();
-String currentInput = new String();
-boolean option1;
-boolean start;
-boolean count;
-boolean hit;
-boolean end;
+boolean option1; // starting the game
+boolean start; // start menu
+boolean count; // countdown
+boolean hit; // collisions
+boolean end; // game over
 
 MainSquare square;
 StartUp startup;
@@ -123,7 +123,7 @@ void collisions() //  checking for collisions
                  parts [j].ex2 = random (-10,10);
                }
                
-                hit = true; //  makes the explosions true
+               hit = true; //  makes the explosions true
                
               if(square.firstFloor)
               {
@@ -149,7 +149,7 @@ void collisions() //  checking for collisions
 } // end collide()
 
 
-void loadData() //  loads in the data
+void loadData() //  loads in the data from the file
 {
   String[] lines = loadStrings("scores.csv");
   for(String line: lines)
